@@ -30,61 +30,71 @@
 						<div class="row">
 							<div class="col-md-7">
 								<div class="content">
-									<h2 class="entry-title">Our History</h2>
+									<h2 class="entry-title">About Kritarth</h2>
 									<figure class="featured-image">
-										<img src="dummy/post-image.jpg" alt="post image">
+										<img src="images/event_icons/qwerty.png" alt="post image">
 									</figure>
-									<p class="leading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat odio autem iste neque architecto alias culpa, ab libero, praesentium esse natus quae possimus sed qui dolorum laudantium illum, incidunt eligendi?</p>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+									<p>KRITARTH being a perfect platform for showcasing talents by raising social awareness on various issues that has proved to be a great success since its first edition which started in 2015. KRITARTH is basically spreading social awareness on a large scale through plethora of events which is some-way or the other associated to a social cause. The idea behind KRITARTH is to make people aware about their service towards the society that a human being can inculcate and it is all about completely following the footsteps of our Founder Prof. Achyuta Samantha Sir who is a perfect epitome in the field of social service, the living legend.</p>
 
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+									<p class="leading">“The biggest victory for Today’s mankind is being independent from their own dependencies.”</p>
+
+									<h1>MILLION DOLLAR SMILE</h1>
+
+
+
+									<p>Across millennia, lives have been destroyed because of wrath, anger, and insatiable lust for Possessiveness. Healthy bodies have fallen prey to diseases, because all they did when alive, was to Complain and grumble.
+									Where did smile get overshadowed by solemnity and frown? Somewhere along the withering away
+ 									of childhood, when responsibilities and challenges got them. Or maybe, it was simply the society,
+									thus rendering "smile" with a million dollar tag
+ 
+									In today's time, a smile is indeed worth millions of dollars. A cheerful smile helps to cut the cost
+									of expensive hospital bills. It makes us positive against challenges and aggression. A calm mind
+									Allows us to think before taking any course of action. This sanity leads us to passionate efforts and
+									desired outcomes afterward. A smile also provides us with some relaxation in the strenuous
+									Routine of our day-to-day lives.
+									So smile...
+									 
+									Because the world needs it!
+									You need it!
+									And...
+									It is need of the hour.</p>
+									<p class="leading">Vision of KRITARTH 5.0</p>
+									 
+									<p>To create awareness through the various events related to the concept of Art of Giving, Kompassion and India Against Negativity.
+									 
+									The entire three days of the event will have three messages being spread on a large scale amongst the participants:</p>
+									<p>
+
+									1)  Talk show by eminent life speakers such as Sadhguru, Sandeep Maheswari, Jay Shetty or any eminent life speaker.<br>
+									2) Star Attractions being Guru Gaur Gopal Das, an eminent motivational Speaker and an inspiration to thousands has been a part of this idiosyncratic event. His speech astounded the entire audience and we were honoured to have our Hon. Founder Sir, Prof. Achyuta Samanta mentioned in his book. The Karn Award, a symbol of gratitude was presented to him and with the same enthusiasm, we wish to repeat the same for this year’s edition.<br>
+									 
+									We here at KRITARTH 5.0 are geared up to give our best with complete determination, honesty, integrity and all sort of discipline possible from our end. Our events for this year are our weapons to set a benchmark of our soul Moto our events are Kritarth Got Talent, Kanvassing, Kostumbre, Klick It,  & Rocket Singh where one has to utilize their creativity to add to our cause.
+</p>
 								</div>
 							</div>
 							<div class="col-md-4 col-md-push-1">
 								<aside class="sidebar">
 									<div class="widget">
-										<h3 class="widget-title">Discography</h3>
+										<h3 class="widget-title">About</h3>
 										<ul class="discography-list">
 											<li>
-												<figure class="cover"><img src="dummy/thumbnail-1.jpg" alt="thumbnail 1"></figure>
+												<figure class="cover"><img src="images/event_icons/KIIT.png" alt="thumbnail 1"></figure>
 												<div class="detail">
-													<h3><a href="#">Deserunt mollitia animi</a></h3>
+													<h3><a href="#">KIIT</a></h3>
 													<span class="year">2004</span>
 													<span class="track">17 tracks</span>
 												</div>
 											</li>
 											<li>
-												<figure class="cover"><img src="dummy/thumbnail-2.jpg" alt="thumbnail 2"></figure>
+												<figure class="cover"><img src="images/event_icons/KISS.png" alt="thumbnail 2"></figure>
 												<div class="detail">
-													<h3><a href="#">Deserunt mollitia animi</a></h3>
+													<h3><a href="#">KISS</a></h3>
 													<span class="year">2004</span>
 													<span class="track">17 tracks</span>
 												</div>
 											</li>
-											<li>
-												<figure class="cover"><img src="dummy/thumbnail-3.jpg" alt="thumbnail 3"></figure>
-												<div class="detail">
-													<h3><a href="#">Deserunt mollitia animi</a></h3>
-													<span class="year">2004</span>
-													<span class="track">17 tracks</span>
-												</div>
-											</li>
-											<li>
-												<figure class="cover"><img src="dummy/thumbnail-4.jpg" alt="thumbnail 4"></figure>
-												<div class="detail">
-													<h3><a href="#">Deserunt mollitia animi</a></h3>
-													<span class="year">2004</span>
-													<span class="track">17 tracks</span>
-												</div>
-											</li>
-											<li>
-												<figure class="cover"><img src="dummy/thumbnail-5.jpg" alt="thumbnail 5"></figure>
-												<div class="detail">
-													<h3><a href="#">Deserunt mollitia animi</a></h3>
-													<span class="year">2004</span>
-													<span class="track">17 tracks</span>
-												</div>
-											</li>
+											
+											
 										</ul>
 									</div>
 								</aside>
