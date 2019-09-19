@@ -31,10 +31,7 @@
 							<h2 class="entry-title">Gallery</h2>
 							<div class="filter-links filterable-nav">
 								<select class="mobile-filter">
-									<option value="*">Show all</option>
-									<option value=".concert">Concert</option>
-									<option value=".band">Band</option>
-									<option value=".stuff">Stuff</option>
+									<option value="*">Events</option>
 								</select>
 								<a href="#" class="current" data-filter="*">Events</a>
 							</div>
