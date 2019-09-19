@@ -165,7 +165,7 @@ EOF;
       else
       {
            
-           header("Location:https://katallyst.com/index.php/user/signup?msg=success");
+           header("Location:http://kritarth.org");
 	   exit;
       }
  }

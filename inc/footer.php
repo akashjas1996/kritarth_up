@@ -1,6 +1,6 @@
 <footer class="site-footer">
 				<div class="container">
-					<img width="300px" src="images/kritarth-white.png" alt="Kritarth 5.0">
+					<img width="300px" src="../images/kritarth-white.png" alt="Kritarth 5.0">
 					<address>
 						<p>.<br><a href="tel:354543543"></a> <br> <a href="mailto:info@bandname.com">info.kritarth@gmail.com</a></p> 
 					</address> 
