@@ -28,6 +28,13 @@ function redirect($url)
 
 <html lang="en">
 	<head>
+		<style>
+			.card_lg{
+				background:rgba(255,255,255,0.1);
+				height: 200px;
+				border-radius: 30px;
+			}
+		</style>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
@@ -74,7 +81,27 @@ function redirect($url)
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<p> Events will be added soon. </p>
+						<!-- <p> Events will be added soon. </p> -->
+						<br>
+						<h1 style="color: #448CB8"> Participating Events </h1>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 card_lg">
+									
+								</div>
+							</div>
+						</div>
+						<br><br>
+						<h1 style="color: #D06A54"> All Events </h1>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 card_lg">
+									
+								</div>
+							</div>
+						</div>
+
+
 					</center>
 				</div>
 			</div>

@@ -36,7 +36,7 @@
 									<h3 class="slide-subtitle">19th - 20th October 2019</h3>
 									<!-- <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p> -->
 
-									<a href="register.php" class="button cut-corner">Register</a>
+									<a href="Registration" class="button cut-corner">Register</a>
 							</div>
 						</li>
 
@@ -47,7 +47,7 @@
 								<h3 class="slide-subtitle"></h3>
 								<p class="slide-desc">#MillionDollarSmile</p>
 
-								<a href="events.php" class="button cut-corner">Events</a>
+								<a href="Events" class="button cut-corner">Events</a>
 							</div>
 						</li>
 						
