@@ -38,10 +38,6 @@
 							 
 							}
 							?>
-
-
-
-
 						</ul> <!-- .menu -->
 					</nav> <!-- .main-navigation -->
 					<div class="mobile-menu"></div>
