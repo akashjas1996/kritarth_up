@@ -81,7 +81,7 @@ function redirect($url)
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<!-- <p> Events will be added soon. </p> -->
+						<p> Events will be added soon. Stay Tuned. </p>
 						<br>
 						<h1 style="color: #448CB8"> Participating Events </h1>
 						<div class="container">
