@@ -155,7 +155,6 @@ $mail->Port =587;
 
 </html>
 EOF;
-  //  $mail->addBCC("gunanand@kiit.ac.in");
      if($mail->send())
       {
           
