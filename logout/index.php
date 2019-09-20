@@ -21,4 +21,4 @@ function redirect($url)
 
 session_start();
 session_destroy();
-redirect('https://kritarth.org');
+redirect('http://kritarth.org');
