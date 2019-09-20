@@ -23,6 +23,30 @@ function redirect($url)
 }
 
 
+
+if(isset($_POST['participation_pressed'])){
+	$evnt =  $_POST['req_event'];
+	$kid =  $_POST['k_id'];
+	$event_query = "SELECT * FROM pratispradha_chunao WHERE event_id='$evnt' AND kritarth_id = '$kid'";
+	$res_event = mysqli_query($link, $event_query);
+	if(mysqli_num_rows($res_event)>0){
+			echo '<script type="text/javascript">';
+  		echo 'setTimeout(function () { swal("Sorry!","Already added.","warning");';
+  		echo '}, 1000);
+  		</script>';
+		}
+		else{
+
+			$query_event_insert = "INSERT INTO pratispradha_chunao(event_id, kritarth_id) VALUES('$evnt','$kid')";
+			$res_event_insert = mysqli_query($link, $query_event_insert);
+			echo mysqli_error($link);
+			echo '<script type="text/javascript">';
+  		echo 'setTimeout(function () { swal("Wow!","Added to participating events.","success");';
+  		echo '}, 1000);
+  		</script>';
+		}
+}
+
  ?>
 
 
@@ -30,10 +54,35 @@ function redirect($url)
 	<head>
 		<style>
 			.card_lg{
-				background:rgba(255,255,255,0.1);
-				height: 200px;
+				/*background:rgba(255,255,255,0.1);*/
+				/*height: 200px;*/
+				background-color: transparent;
+				padding:20px
 				border-radius: 30px;
+				margin: 10px;
 			}
+			.event_img_card{
+				margin-top: 20px;
+				margin-bottom: : 20px;
+				/*margin-bottom: 10px; */
+				background-color: white;
+				height: 250px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				/*background-size: auto;*/
+				/*background-size:100% 100%;*/
+			}
+			.btn_style1{
+				background-color: #D06A54;
+				border: none;
+			}
+
+			.btn_style2{
+				background-color: #448CB8;
+				border: none;
+			}
+	
+
 		</style>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,18 +135,66 @@ function redirect($url)
 						<h1 style="color: #448CB8"> Participating Events </h1>
 						<div class="container">
 							<div class="row">
-								<div class="col-lg-12 card_lg">
-									
-								</div>
+								<div class="col-lg-12 col-sm-12 card_lg">
+									<div class="row">
+										<?php
+										if(isset($_SESSION['k_id'])){
+											$k_id = $_SESSION['k_id'];
+										}
+										$q2 = "SELECT * FROM pratispradha_chunao WHERE kritarth_id=$k_id";
+										$res2 = mysqli_query($link, $q2);
+										while($row2 = mysqli_fetch_assoc($res2)){
+											$current_event_id = $row2['event_id'];
+											$q3 = "SELECT * FROM pratispradha WHERE event_id='$current_event_id'";
+											$res3 = mysqli_query($link, $q3);
+											$row3 = mysqli_fetch_assoc($res3);
+										 ?>
+										<div class="col-lg-4">
+											<div class="event_img_card" style='background-image: url("../images/<?php echo $row3['event_image'] ?>")'>
+												<h2> <?php echo $row3['event_name'] ?> </h2>
+
+											</div>
+											
+										</div>
+
+									<?php } ?>
+									</div>
+							</div>
 							</div>
 						</div>
 						<br><br>
 						<h1 style="color: #D06A54"> All Events </h1>
 						<div class="container">
 							<div class="row">
-								<div class="col-lg-12 card_lg">
-									
-								</div>
+								<div class="col-lg-12 col-sm-12 card_lg">
+									<div class="row">
+										<?php
+										$q1 = "SELECT * FROM pratispradha";
+										$res1 = mysqli_query($link, $q1);
+										while($row1 = mysqli_fetch_assoc($res1)){
+
+										 ?>
+										<div class="col-lg-4">
+											<?php $event_id = $row1['event_id']; ?>
+											<div onclick="check(<?php echo $event_id ?>,<?php echo $k_id; ?>)" class="event_img_card" style='background-image: url("../images/<?php echo $row1['event_image'] ?>")'>
+												<h2> <?php echo $row1['event_name'] ?> </h2>
+											</div>
+											<br>
+											<!-- <div class="row">
+												<button class="btn_style1" style="width: 93%;"> Details </button>
+											</div> -->
+											<form action="" method="POST">
+											<div class="row">
+												<input type="hidden" name="req_event" value="<?php echo $event_id; ?>">
+												<input type="hidden" name="k_id" value="<?php echo $k_id; ?>">
+												<button name="participation_pressed" type="submit" class="btn_style2" style="width: 93%"> Participate </button>
+											</div>
+										</form>
+											
+										</div>
+
+									<?php } ?>
+									</div>
 							</div>
 						</div>
 
@@ -128,7 +225,11 @@ function redirect($url)
 				document.getElementById('fee_store').value="150";}
 			}
 		</script>
-		
+		<script>
+			function check(a,b){
+				console.log(a,b);
+			}
+		</script>
 	</body>
 
 </html>
