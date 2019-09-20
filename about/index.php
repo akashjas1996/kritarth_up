@@ -8,7 +8,7 @@
 		<title>About Us| Band Template</title>
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
-		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="style.css">
 		
@@ -22,7 +22,7 @@
 	<body>
 		
 		<div id="site-content">
-			<?php include 'inc/header.php' ?>
+			<?php include '../inc/header.php' ?>
 			
 			<main class="main-content">
 				<div class="fullwidth-block inner-content">
@@ -96,7 +96,7 @@
 				
 			</main> <!-- .main-content -->
 
-			<?php include 'inc/footer.php' ?>
+			<?php include '../inc/footer.php' ?>
 
 		</div> <!-- #site-content -->
 
