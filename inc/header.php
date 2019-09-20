@@ -11,9 +11,9 @@
 							<!-- current-menu-item -->
 							<li class="menu-item"><a href="./">Home</a></li>
 							
-							<li class="menu-item"><a href="../gallery">Gallery</a></li>
-							<!-- <li class="menu-item"><a href="events.php">Events</a></li> -->
-							<li class="menu-item"><a href="../contact">Contact</a></li>
+							<li class="menu-item"><a href="../Gallery">Gallery</a></li>
+							<li class="menu-item"><a href="../Events">Events</a></li>
+							<li class="menu-item"><a href="../Contact">Contact</a></li>
 
 
 						
@@ -34,7 +34,7 @@
 								echo '<li class="menu-item"><a href="../logout">Logout</a></li>';
 							}
 							else{
-								echo '<li class="menu-item"><a href="../register">Register</a></li>';
+								echo '<li class="menu-item"><a href="../Register">Register</a></li>';
 							 
 							}
 							?>
