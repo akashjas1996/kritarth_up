@@ -52,6 +52,8 @@ $mail->Password = "RF4k!a0h";
 $mail->SMTPSecure = "tls";                           
 //Set TCP port to connect to 
 $mail->Port =587;
+
+echo "Reaching";
      $mail->Body  = <<<EOF
                 <!DOCTYPE html>
 <html>
@@ -160,20 +162,19 @@ EOF;
      if($mail->send())
       {
           
-           redirect("/index.php");
+           redirect("http://kritarth.org");
            exit;
       }
       else
       {
            
-           header("Location:http://kritarth.org");
-	   exit;
+           redirect("http://kritarth.org");
       }
  }
  else 
  {   
     
-     redirect("/index.php");
+     redirect("http://kritarth.org");
  }
 ob_end_flush();
 ?>
