@@ -48,7 +48,7 @@
 									</div>
 									<div class="col-lg-4">
 										<div class="row">
-											<img class="cards" src="../images/klickit.pNg">
+											<img class="cards" src="../images/klickit.png">
 										</div>
 										<div class="row">
 											<center> <h2>KLICKIT</h2> </center>
