@@ -1,8 +1,6 @@
 <?php session_start() ?>
 
 <!DOCTYPE html>
-
-
 <?php
 include '../inc/dbconnection.php';
 function redirect($url)

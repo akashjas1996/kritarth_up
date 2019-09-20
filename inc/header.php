@@ -34,7 +34,7 @@
 								echo '<li class="menu-item"><a href="../logout">Logout</a></li>';
 							}
 							else{
-								echo '<li class="menu-item"><a href="../Register">Register</a></li>';
+								echo '<li class="menu-item"><a href="../Registration">Register</a></li>';
 							 
 							}
 							?>
