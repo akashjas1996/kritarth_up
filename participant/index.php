@@ -190,8 +190,11 @@ if(isset($_POST['participation_removal_pressed'])){
 											<div>
 											<h4 style="line-height: 0" align="left"> First Prize :  <?php echo $row3['first_prize']?> </h4>
 											<h4 style="line-height: 0" align="left"> Second Prize :  <?php echo $row3['second_prize']?> </h4>
+											<h4 style="line-height: 0" align="left"> Third Prize :  <?php
 
-											<h4 style="line-height: 0" align="left"> Third Prize :  <?php echo $row3['third_prize']?> </h4>
+											if($row3['third_prize']>0)
+											 	echo $row3['third_prize']
+											 ?> </h4>
 											</div>
 
 											<div>
