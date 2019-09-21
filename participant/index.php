@@ -139,7 +139,7 @@ if(isset($_POST['participation_removal_pressed'])){
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<p> Event info be added soon. Stay Tuned. </p>
+						<p> Payment Button will be added soon. Stay Tuned. </p>
 						<br>
 						<hr>
 						<h1 style="color: #448CB8"> Participating Events </h1>
