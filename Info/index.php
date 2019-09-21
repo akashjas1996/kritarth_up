@@ -95,7 +95,9 @@ return $string;
 								<h2>About</h2>
 								<?php echo $row_abt_event['short_description'] ?>
 								<h2>Rules and Regulations </h2>
-								<?php echo nl2br2($row_abt_event['long_description']); ?>
+								<?php 
+
+								echo nl2br2('<li>'.$row_abt_event['long_description']); ?>
 							</div>
 						</div>
 					</div>
