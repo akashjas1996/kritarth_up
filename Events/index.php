@@ -38,10 +38,10 @@
 									$res_fetch_all_event = mysqli_query($link, $query_fetch_all_event);
 									while($row_fetch_all_event = mysqli_fetch_assoc($res_fetch_all_event)){
 									 ?>
-									 <a style="text-decoration: none" href="Events/about/?ei=<?php echo $row_fetch_all_event['event_id'] ?>">
+									 <a style="text-decoration: none" href="Info/?ei=<?php echo $row_fetch_all_event['event_id'] ?>">
 									<div class="col-lg-4">
 										<div class="row">
-											<img class="cards" src="../images/<?php echo $row_fetch_all_event['event_image'] ?>">
+											<img  class="cards" src="../images/<?php echo $row_fetch_all_event['event_image'] ?>">
 										</div>
 										<div class="row">
 											<center> <h2 style="text-decoration: none"><?php echo $row_fetch_all_event['event_name'] ?></h2> </center>

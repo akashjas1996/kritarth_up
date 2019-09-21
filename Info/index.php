@@ -4,7 +4,7 @@
 
 
 <?php
-include '../../inc/dbconnection.php';
+include '../inc/dbconnection.php';
 function redirect($url)
 {
     if (!headers_sent())
@@ -35,9 +35,9 @@ function redirect($url)
 		<title> Register| Kritarth.org</title>
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
-		<link href="../../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../../style.css">
+		<link rel="stylesheet" href="../style.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -51,7 +51,7 @@ function redirect($url)
 	<body>
 		
 		<div id="site-content">
-			<?php include '../../inc/header.php';
+			<?php include '../inc/header.php';
 			if(isset($_GET['ei'])){
 				$event = $_GET['ei'];
 			}
@@ -76,7 +76,7 @@ function redirect($url)
 								<?php echo $row_abt_event['shedule'] ?>
 							</div>
 							<div class="col-lg-3">
-								<img style="margin-top: 25px" src="../../images/<?php echo $row_abt_event['event_image']?>">
+								<img style="margin-top: 25px; width: 200px" src="../../images/<?php echo $row_abt_event['event_image']?>">
 							</div>
 						</div>
 						<div class="row">
@@ -99,14 +99,14 @@ function redirect($url)
 				
 			</main> <!-- .main-content -->
 
-			<?php include '../../inc/footer1.php' ?>
+			<?php include '../inc/footer1.php' ?>
 
 		</div> <!-- #site-content -->
 
-		<script src="../../js/jquery-1.11.1.min.js"></script>	
+		<script src="../js/jquery-1.11.1.min.js"></script>	
 		<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>	
-		<script src="../../js/plugins.js"></script>
-		<script src="../../js/app.js"></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/app.js"></script>
 
 		<script>
 			function college_chosen(a){
