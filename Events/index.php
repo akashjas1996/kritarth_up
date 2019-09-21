@@ -1,3 +1,4 @@
+<?php include '../inc/dbconnection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -32,57 +33,26 @@
 							<h2 class="entry-title">Events</h2>
 							<div class="container">
 								<div class="row">
+									<?php 
+									$query_fetch_all_event = "SELECT * FROM pratispradha";
+									$res_fetch_all_event = mysqli_query($link, $query_fetch_all_event);
+									while($row_fetch_all_event = mysqli_fetch_assoc($res_fetch_all_event)){
+									 ?>
+									 <a style="text-decoration: none" href="Events/about/?ei=<?php echo $row_fetch_all_event['event_id'] ?>">
 									<div class="col-lg-4">
 										<div class="row">
-											<img class="cards" src="../images/rocket_singh.png">
+											<img class="cards" src="../images/<?php echo $row_fetch_all_event['event_image'] ?>">
 										</div>
 										<div class="row">
-											<center> <h2>Rocket Singh</h2> </center>
+											<center> <h2 style="text-decoration: none"><?php echo $row_fetch_all_event['event_name'] ?></h2> </center>
 										</div>
 									</div>
-									<div class="col-lg-4">
-										<div class="row">
-											<img class="cards" src="../images/klickit.png">
-										</div>
-										<div class="row">
-											<center> <h2>KLICKIT</h2> </center>
-										</div>
-									</div>
+								</a>
+								<?php } ?>
+									
 
-									<div class="col-lg-4">
-										<div class="row">
-											<img class="cards" src="../images/devils_advocate.jpg">
-										</div>
-										<div class="row">
-											<center> <h2>DEVILS ADVOCATE</h2> </center>
-										</div>
-									</div>
-								<div class="row">
-
-									<div class="col-lg-4">
-										<div class="row">
-											<img class="cards" src="../images/kritharths_got_talent.jpg">
-										</div>
-										<div class="row">
-											<center> <h2>KRITARTHS GOT TALENT</h2> </center>
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="row">
-											<img class="cards" src="../images/kanvassing.jpg">
-										</div>
-										<div class="row">
-											<center> <h2>Kanvassing</h2> </center>
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="row">
-											<img class="cards" src="../images/kostumbre.jpg">
-										</div>
-										<div class="row">
-											<center> <h2>KOSTUMBRE</h2> </center>
-										</div>
-									</div>
+									
+								
 								</div>
 								</div>
 							</div>
