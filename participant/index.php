@@ -184,7 +184,7 @@ if(isset($_POST['participation_removal_pressed'])){
 
 											</div>
 											<div style="cursor: pointer;">
-											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br($row3['short_description'] .' Read more...') ?>  </p>
+											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php nl2br(stripcslashes($row3['short_description'] .' Read more...')) ?>  </p>
 											</div>
 
 											<div>
@@ -198,7 +198,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											</div>
 
 											<div>
-											<p style="display:none;" id="long_description_box<?php echo $row3['event_id'] ?>" align="left"> <b> Rules and Regulations : </b> <?php echo nl2br($row3['long_description'] .' Read more...') ?>  </p>
+											<p style="display:none;" id="long_description_box<?php echo $row3['event_id'] ?>" align="left"> <b> Rules and Regulations : </b> <?php echo nl2br(stripcslashes($row3['long_description'] .' Read more...')) ?>  </p>
 											</div>
 
 
