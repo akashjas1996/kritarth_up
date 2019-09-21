@@ -24,7 +24,7 @@ function redirect($url)
 }
 
 function nl2br2($string) {
-$string = str_replace(array("\r\n", "\r", "\n"), "<br /><br/>", $string);
+$string = str_replace(array("\r\n", "\r", "\n"), "</li><br /><li>", $string);
 return $string;
 }
 ?>
