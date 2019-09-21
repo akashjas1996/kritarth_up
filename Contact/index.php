@@ -46,8 +46,34 @@
 					
 						<div class="row parallax">
                             <div class="col-md-6 ">
-                            	<h2 class="page-title">Contact Us</h2>  <h2><i class="fa fa-2x fa-phone"></i>&nbsp;&nbsp;
-                               <span>8787585831,8249242194</span> 
+                            	<h2 class="page-title">Contact Us</h2>  
+
+                            	<h2><!-- <i class="fa fa-2x fa-phone"></i>&nbsp;&nbsp; -->
+                              
+
+                              <!--  <span>8787585831,8249242194</span>  -->
+                               <div class="row">
+                               	<div  class="col-lg-6">
+                               		<h3 style="line-height: 0">Pradipto Som</h3>
+                               		<a style="line-height: 0; color: grey" href="tel:+918787585831">
+                               			+91 - 8787585831
+                               		</a>
+
+                               	</div>
+
+
+                               </div>
+
+                               <div class="row">
+                               	<div  class="col-lg-6">
+                               		<h3 style="line-height: 0">Navneet Pandey</h3>
+                               		<a style="line-height: 0; color: grey" href="tel:+918249242194">
+                               			+91 - 8249242194
+                               		</a>
+                               	</div>
+                               </div>
+
+
                                 </h2>
                                 <br>
                                 <h2><i class="fa fa-2x fa-envelope"></i>&nbsp;&nbsp;<span>info.kritarth@gmail.com</span></h2><br>
