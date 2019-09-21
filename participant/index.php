@@ -22,6 +22,13 @@ function redirect($url)
     }
 }
 
+function nl2br2($string) {
+$string = str_replace(array("\r\n", "\r", "\n"), "</li><li>", $string);
+return $string;
+$string = substr($string,0,strlen($string)-2);
+
+}
+
 
 
 if(isset($_POST['participation_pressed'])){
@@ -184,7 +191,7 @@ if(isset($_POST['participation_removal_pressed'])){
 
 											</div>
 											<div style="cursor: pointer;">
-											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br($row3['short_description'] .' Read more...') ?>  </p>
+											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br2($row3['short_description'] .' Read more...') ?>  </p>
 											</div>
 
 											<div>
