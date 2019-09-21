@@ -1,6 +1,6 @@
 <header class="site-header">
 				<div class="container">
-					<a href="index.html" id="branding">
+					<a href="../" id="branding">
 						<img width="220px" src="../images/kritarth-white.png" alt="Site Title">
 						<!-- <small class="site-description">Slogan goes here</small> -->
 					</a> <!-- #branding -->
@@ -14,10 +14,6 @@
 							<li class="menu-item"><a href="../Gallery">Gallery</a></li>
 							<li class="menu-item"><a href="../Events">Events</a></li>
 							<li class="menu-item"><a href="../Contact">Contact</a></li>
-
-
-						
-
 							<?php
 							if(isset($_SESSION['k_id'])){
 								$name = $_SESSION['name'];

@@ -31,7 +31,7 @@ if(isset($_POST['participation_pressed'])){
 	$res_event = mysqli_query($link, $event_query);
 	if(mysqli_num_rows($res_event)>0){
 			echo '<script type="text/javascript">';
-  		echo 'setTimeout(function () { swal("Sorry!","Already added.","warning");';
+  		echo 'setTimeout(function () { swal("Oops!","Already participating.","warning");';
   		echo '}, 1000);
   		</script>';
 		}
@@ -45,6 +45,15 @@ if(isset($_POST['participation_pressed'])){
   		echo '}, 1000);
   		</script>';
 		}
+}
+
+if(isset($_POST['participation_removal_pressed'])){
+	$del_event = $_POST['del_event_id'];
+	$del_id = $_SESSION['k_id'];
+	$query_del = "DELETE FROM pratispradha_chunao WHERE event_id = '$del_event' AND kritarth_id='$del_id'";
+	// echo $query_del;
+	$res_del = mysqli_query($link, $query_del);
+	// echo 
 }
 
  ?>
@@ -130,17 +139,19 @@ if(isset($_POST['participation_pressed'])){
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<p> Events will be added soon. Stay Tuned. </p>
+						<p> Event info be added soon. Stay Tuned. </p>
 						<br>
+						<hr>
 						<h1 style="color: #448CB8"> Participating Events </h1>
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-12 col-sm-12 card_lg">
-									<div class="row">
+									
 										<?php
 										if(isset($_SESSION['k_id'])){
 											$k_id = $_SESSION['k_id'];
 										}
+
 										$q2 = "SELECT * FROM pratispradha_chunao WHERE kritarth_id=$k_id";
 										$res2 = mysqli_query($link, $q2);
 										while($row2 = mysqli_fetch_assoc($res2)){
@@ -149,20 +160,65 @@ if(isset($_POST['participation_pressed'])){
 											$res3 = mysqli_query($link, $q3);
 											$row3 = mysqli_fetch_assoc($res3);
 										 ?>
+										 <div class="row">
 										<div class="col-lg-4">
 											<div class="event_img_card" style='background-image: url("../images/<?php echo $row3['event_image'] ?>")'>
-												<h2> <?php echo $row3['event_name'] ?> </h2>
+												<div class="row">
+														<h2> <?php echo $row3['event_name'] ?> </h2>
+												</div>
+											</div>
+											<form action="" method="POST">
+												<input type="hidden" name="del_event_id" value = "<?php echo $row3['event_id'] ?>">
+											<div class="row">
+												<button name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%"> Remove </button>
+											</div>
+										</form>
+										</div>
+										
+										<div class="col-lg-7" style=" margin: 10px;">
+											
+											<h4 align="left"> Venue :  <?php echo $row3['venue'] ?> </h4>
+
+											<h4 align="left"> Time :  <?php echo $row3['shedule'] ?> </h4>
+											<div>
 
 											</div>
-											
-										</div>
+											<div style="cursor: pointer;">
+											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br($row3['short_description'] .' Read more...') ?>  </p>
+											</div>
 
+											<div>
+											<h4 style="line-height: 0" align="left"> First Prize :  <?php echo $row3['first_prize']?> </h4>
+											<h4 style="line-height: 0" align="left"> Second Prize :  <?php echo $row3['second_prize']?> </h4>
+											<h4 style="line-height: 0" align="left"> Third Prize :  <?php echo $row3['third_prize']?> </h4>
+											</div>
+
+											<div>
+											<p style="display:none; transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;" id="long_description_box<?php echo $row3['event_id'] ?>" align="left"> <b> Rules and Regulations : </b> <?php echo nl2br($row3['long_description'] .' Read more...') ?>  </p>
+											</div>
+
+
+										</div>
+										</div>
 									<?php } ?>
-									</div>
+
+									<?php
+										$kid = $_SESSION['k_id'];
+										$q4 = "SELECT * FROM pratispradha_chunao WHERE kritarth_id = '$kid'" ;
+										$r4 = mysqli_query($link, $q4);
+										if(mysqli_num_rows($r4)==0){
+											echo "<center> <h2> No events choosen. </h2> </center>";
+										}
+
+
+									 ?>
+
+
+									
 							</div>
 							</div>
 						</div>
-						<br><br>
+						<br><hr><br>
 						<h1 style="color: #D06A54"> All Events </h1>
 						<div class="container">
 							<div class="row">
@@ -180,9 +236,7 @@ if(isset($_POST['participation_pressed'])){
 												<h2> <?php echo $row1['event_name'] ?> </h2>
 											</div>
 											<br>
-											<!-- <div class="row">
-												<button class="btn_style1" style="width: 93%;"> Details </button>
-											</div> -->
+											
 											<form action="" method="POST">
 											<div class="row">
 												<input type="hidden" name="req_event" value="<?php echo $event_id; ?>">
@@ -190,7 +244,9 @@ if(isset($_POST['participation_pressed'])){
 												<button name="participation_pressed" type="submit" class="btn_style2" style="width: 93%"> Participate </button>
 											</div>
 										</form>
-											
+										<div class="row">
+												<button onclick="activate_details_box(<?php echo $event_id?>)" class="btn_style1" style="width: 93%;"> Details </button>
+											</div>
 										</div>
 
 									<?php } ?>
@@ -226,8 +282,22 @@ if(isset($_POST['participation_pressed'])){
 			}
 		</script>
 		<script>
-			function check(a,b){
-				console.log(a,b);
+			function activate_details_box(a){
+				a = 'details_box'+a;
+				console.log(a);
+				document.getElementById(a).style.display="block";
+			}
+		</script>
+		<script type="text/javascript">
+			function show_long_description(a){
+				a = "long_description_box"+a;
+
+				if(document.getElementById(a).style.display==='block')
+					document.getElementById(a).style.display="none";
+				else{
+					document.getElementById(a).style.display="block";
+				}
+				console.log(a);
 			}
 		</script>
 	</body>
