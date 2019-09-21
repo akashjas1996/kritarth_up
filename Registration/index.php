@@ -123,18 +123,40 @@ echo mysqli_error($link);
 									<input required="" name="password1" type="password" placeholder="Password"..>
 									<input required="Enter Confirm Password" name="password2" type="password" placeholder="confirm password"..>
 										<input required="" name="cont" type="number" placeholder="Contact No."..>
-<input onchange="college_chosen(this)" placeholder="Institute Name" list="institute" name="inst_name" /></label>
-<datalist id="institute">
-  <option value="KIIT"> </option>
-  <option value="KIMS">
-  <option value="KSOM">
-  <option value="KSOL">
-  <option value="KISS">
-  <option value="Kiit International School">
-  <option value="Others">
-</datalist>
-<input id="fee" type="text" value="200" disabled name="amount" style="display: none"> 
+<select onchange="college_chosen(this)" style="width: 100%; margin-top: 0px; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none; ">
+	<option value="" disabled selected>Select College</option>
+	<option value="KIIT"> KIIT </option>
+	<option value="KIMS"> KIMS </option>
+  <option value="KSOM"> KSOM </option>
+  <option value="KSOL"> KSOL </option>
+  <option value="KISS"> KISS </option>
+  <option value="Kiit International School"> Kiit International School </option>
+  <option value="Others"> Others </option>
+</select>
+
+
+
+<select id="year_field" onchange="check_for_firstYear(this)" style="display:none;width: 100%; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none;">
+<option  value="" disabled selected>Select Year</option>
+	<option disabled>
+		First (Not allowed)
+	</option>
+	<option>
+		Second
+	</option>
+	<option>
+		Third
+	</option>
+	<option>
+		Fourth
+	</option>
+</select>
+
+<input id="fee" type="text" value="200" disabled name="amount" style="display: none;"> 
 <input id="fee_store" type="hidden" name="fee_value"  value="200">
+
+
+
 									<!-- <select name="payment_amt" type="text" placeholder="Fee">
 										<option>208</option>
 										<option>208</option>
@@ -190,6 +212,18 @@ echo mysqli_error($link);
 				else{
 				document.getElementById('fee').value="200";
 				document.getElementById('fee_store').value="150";}
+
+				if(a.value==='KIIT'){
+					document.getElementById('year_field').style.display="block";
+				}
+			}
+		</script>
+
+		<script>
+			function check_for_firstYear(arg){
+				if(agr.value==='First'){
+					console.log("First year");
+				}
 			}
 		</script>
 		
