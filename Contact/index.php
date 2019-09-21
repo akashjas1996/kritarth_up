@@ -72,7 +72,7 @@
                                		<h3 style="line-height: 0">Navneet Pandey</h3>
                                		<a style="line-height: 0; color: grey; text-decoration: none" href="tel:+918249242194">
 
-                               			<a href="https://api.whatsapp.com/send?phone=917064687832text=Hello, Got your number from kritarth Webpage, wanted your help in....." > <img style="width: 35px; margin-top:2px; " src="whatsapp.png"> </a>
+                               			<a href="https://api.whatsapp.com/send?phone=917064687832&text=Hello, Got your number from kritarth Webpage, wanted your help in....." > <img style="width: 35px; margin-top:2px; " src="whatsapp.png"> </a>
                                			&nbsp;
                                			<i class="fa fa-phone"></i> +91 - 8249242194
                                			<br>
