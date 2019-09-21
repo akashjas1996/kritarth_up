@@ -16,7 +16,7 @@
 		<style>
         .parallax {
   /* The image used */
-  background-image: url("../images/black.jpg");
+  /*background-image: url("../images/black.jpg");*/
 
   /* Set a specific height */
   min-height: 500px; 
