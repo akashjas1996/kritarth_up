@@ -8,13 +8,13 @@
 				padding: 20px;
 			}
 
-			event_name {
+			.event_name {
   color: #2c87f0;
 }
-event_name:visited {
+.event_name:visited {
   color: #636;
 }
-event_name:hover, a:active, a:focus {
+.event_name:hover, a:active, a:focus {
   color:#c33;
 }
 		</style>
