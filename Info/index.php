@@ -26,7 +26,7 @@ function redirect($url)
 function nl2br2($string) {
 $string = str_replace(array("\r\n", "\r", "\n"), "</li><li>", $string);
 return $string;
-$string = substr($string,0,strlen($string)-1);
+$string = substr($string,0,strlen($string)-2);
 
 }
 ?>
