@@ -139,7 +139,7 @@ if(isset($_POST['participation_removal_pressed'])){
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<p> Payment button will be added soon. Stay Tuned. </p>
+						<p> Event info be added soon. Stay Tuned. </p>
 						<br>
 						<hr>
 						<h1 style="color: #448CB8"> Participating Events </h1>
@@ -194,7 +194,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											</div>
 
 											<div>
-											<p style="display:none; transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;" id="long_description_box<?php echo $row3['event_id'] ?>" align="left"> <b> Rules and Regulations : </b> <?php echo nl2br($row3['long_description'] .' Read more...') ?>  </p>
+											<p style="display:none;" id="long_description_box<?php echo $row3['event_id'] ?>" align="left"> <b> Rules and Regulations : </b> <?php echo nl2br($row3['long_description'] .' Read more...') ?>  </p>
 											</div>
 
 
@@ -244,10 +244,10 @@ if(isset($_POST['participation_removal_pressed'])){
 												<button name="participation_pressed" type="submit" class="btn_style2" style="width: 93%"> Participate </button>
 											</div>
 										</form>
-										<!-- <div class="row">
+										<div class="row">
 												<button onclick="activate_details_box(<?php echo $event_id?>)" class="btn_style1" style="width: 93%;"> Details </button>
 											</div>
-										</div> -->
+										</div>
 
 									<?php } ?>
 									</div>
