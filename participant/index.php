@@ -190,7 +190,7 @@ if(isset($_POST['participation_removal_pressed'])){
 
 											</div>
 											<div style="cursor: pointer;">
-											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br2('<li>'.$row3['short_description'] .' Read more...') ?>  </p>
+											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br2($row3['short_description'] .' Read more...') ?>  </p>
 											</div>
 
 											<div>
