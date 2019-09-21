@@ -244,10 +244,10 @@ if(isset($_POST['participation_removal_pressed'])){
 												<button name="participation_pressed" type="submit" class="btn_style2" style="width: 93%"> Participate </button>
 											</div>
 										</form>
-										<div class="row">
+										<!-- <div class="row">
 												<button onclick="activate_details_box(<?php echo $event_id?>)" class="btn_style1" style="width: 93%;"> Details </button>
 											</div>
-										</div>
+										</div> -->
 
 									<?php } ?>
 									</div>
