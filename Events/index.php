@@ -7,6 +7,16 @@
 				width: 100%;
 				padding: 20px;
 			}
+
+			event_name {
+  color: #2c87f0;
+}
+event_name:visited {
+  color: #636;
+}
+event_name:hover, a:active, a:focus {
+  color:#c33;
+}
 		</style>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +54,7 @@
 											<img  class="cards" src="../images/<?php echo $row_fetch_all_event['event_image'] ?>">
 										</div>
 										<div class="row">
-											<center> <h2 style="text-decoration: none"><?php echo $row_fetch_all_event['event_name'] ?></h2> </center>
+											<center> <h2 class = "event_name"><?php echo $row_fetch_all_event['event_name'] ?></h2> </center>
 										</div>
 									</div>
 								</a>
