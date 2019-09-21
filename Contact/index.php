@@ -47,7 +47,7 @@
 						<div class="row parallax">
                             <div class="col-md-6 ">
                             	<h2 class="page-title">Contact Us</h2>  
-
+                                <hr>
                             	<h2><!-- <i class="fa fa-2x fa-phone"></i>&nbsp;&nbsp; -->
                               
 
@@ -86,7 +86,7 @@
                                 <br>
                                 <h2><i class="fa fa-2x fa-envelope"></i>&nbsp;&nbsp;<span>info.kritarth@gmail.com</span></h2><br>
                                 <h2><i class="fa fa-2x fa-map-marker"></i>&nbsp;&nbsp;&nbsp;<span>KIIT Student Activity Centre</span>
-                                &nbsp;&nbsp;&nbsp;<p>Campus 13,Bhubaneshwar,Odisha,India</p>
+                                &nbsp;&nbsp;&nbsp;<p>Campus 13, Bhubaneshwar, Odisha, India</p>
                                 </h2>
 							</div>
                             <br><br>
