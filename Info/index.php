@@ -90,7 +90,7 @@ function redirect($url)
 								<h2>About</h2>
 								<?php echo $row_abt_event['short_description'] ?>
 								<h2>Rules and Regulations </h2>
-								<?php echo $row_abt_event['long_description']; ?>
+								<?php echo nl2br($row_abt_event['long_description']); ?>
 							</div>
 						</div>
 					</div>
