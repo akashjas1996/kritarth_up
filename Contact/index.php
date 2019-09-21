@@ -54,7 +54,7 @@
                               <!--  <span>8787585831,8249242194</span>  -->
                                <div class="row">
                                	<div  class="col-lg-6">
-                               		<h3 style="line-height: 0">Pradipto Som</h3>
+                               		<h3 style="line-height: 0">Pradipta Som</h3>
                                		<a href="https://api.whatsapp.com/send?phone=918787585831&text=Hello, Got your number from kritarth Webpage wanted your help in ....." > <img style="width: 35px; margin-top: 2px " src="whatsapp.png"> </a>
                                			&nbsp;
                                		<a style="line-height: 0; color: grey; text-decoration: none" href="tel:+918787585831">
