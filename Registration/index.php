@@ -57,7 +57,7 @@ echo mysqli_error($link);
   		echo 'setTimeout(function () { swal("WOW!","Registered Successfully !","success");';
   		echo '}, 1000);
   		</script>';
-  		//header( "refresh:2;url=../reg_mail.php?email=$email" );
+  		header( "refresh:2;url=../reg_mail.php?email=$email" );
   		//redirect('../reg_mail.php?email='.$email);
 		}
 	}
@@ -123,7 +123,7 @@ echo mysqli_error($link);
 									<input required="" name="password1" type="password" placeholder="Password"..>
 									<input required="Enter Confirm Password" name="password2" type="password" placeholder="confirm password"..>
 										<input required="" name="cont" type="number" placeholder="Contact No."..>
-<select onchange="college_chosen(this)" style="width: 100%; margin-top: 0px; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none; ">
+<select name="inst_name" onchange="college_chosen(this)" style="width: 100%; margin-top: 0px; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none; ">
 	<option value="" disabled selected>Select College</option>
 	<option value="KIIT"> KIIT </option>
 	<option value="KIMS"> KIMS </option>
