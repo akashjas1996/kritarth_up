@@ -5,7 +5,7 @@
 						<p>.<br><a href="tel:354543543"></a> <br> <a href="mailto:info@bandname.com">info.kritarth@gmail.com</a></p> 
 					</address> 
 					
-					<form method="GET" action="Registration/index.php" class="newsletter-form" >
+					<form method="GET" action="https://kritarth.org/Registration/index.php" class="newsletter-form" >
 						<input type="email" name="reg_mail" placeholder="Enter your email to register now">
 						<input type="submit" class="button cut-corner" value="Register">
 					</form>
