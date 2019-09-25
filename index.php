@@ -39,7 +39,9 @@
 						<li class="lazy-bg" data-background="images/ezgif.com-gif-maker.webp">
 							<div class="container">
 									<h2 class="slide-title">Kritarth 5.0</h2>
-									<h3 class="slide-subtitle">19th - 20th October 2019</h3>
+									<h3 style="line-height: 10px" class="slide-subtitle">19th - 20th October 2019</h3>
+									<br><br>
+									<br><br>
 									<a href="Registration" class="button cut-corner">Register</a>
 							</div>
 						</li>
