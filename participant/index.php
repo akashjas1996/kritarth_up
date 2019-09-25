@@ -314,7 +314,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											</div>
 										</form>
 										 <div class="row">
-										 	<a href="../info/?ei=<?php echo $event_id ?>">
+										 	<a href="../Info/?ei=<?php echo $event_id ?>">
 												<button class="btn_style1" style="width: 93%;"> Details </button>
 											</a>
 											</div>
