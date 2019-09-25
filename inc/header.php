@@ -1,6 +1,6 @@
 <header class="site-header">
-				<div class="container">
-					<a href="../" id="branding">
+				<div class="container" style="background-color: gray" >
+					<a href="../" id="branding" >
 						<img width="220px" src="../images/kritarth-white.png" alt="Site Title">
 						<!-- <small class="site-description">Slogan goes here</small> -->
 					</a> <!-- #branding -->

@@ -260,7 +260,8 @@ table {
 
 /* line 1, sass/libs/_global.scss */
 body {
-  background-color: #141414;
+  /*background-color: #141414;*/
+  background-color: #ffffff;
   color: #848484;
   font-family: "Source Sans Pro", "Open Sans", sans-serif;
   font-size: 16px;
@@ -1734,6 +1735,7 @@ body {
     display: none !important; } }
 /* line 1, sass/layout/_header.scss */
 .site-header {
+  background-color: gray;
   *zoom: 1;
   z-index: 99; }
   /* line 4, sass/libs/_mixins.scss */
@@ -1841,7 +1843,7 @@ body {
       display: block;
       position: relative;
       padding: 45px 20px;
-      color: white;
+      color: #ffffff;
       font-size: 15px;
       font-size: 0.9375em;
       font-weight: 600;
@@ -2130,7 +2132,7 @@ body {
 
 /* line 1, sass/layout/_footer.scss */
 .site-footer {
-  background: #191919;
+  background: gray;
   padding: 50px 0;
   text-align: center; }
   /* line 6, sass/layout/_footer.scss */
@@ -2339,9 +2341,11 @@ body {
     .quote-slider blockquote p {
       font-size: 36px;
       font-size: 2.25em;
-      color: white;
+      color: black;
       font-weight: 300;
-      line-height: normal; }
+      line-height: normal;
+      align-content: justify;
+       }
     /* line 116, sass/pages/_homepage.scss */
     .quote-slider blockquote cite {
       display: block;
@@ -2640,7 +2644,7 @@ body {
 
 /* line 4, sass/pages/_download.scss */
 .page-title {
-  color: white;
+  /*color: white;*/
   font-size: 36px;
   font-size: 2.25em; }
 

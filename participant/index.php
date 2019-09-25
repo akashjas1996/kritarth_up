@@ -96,15 +96,48 @@ if(isset($_POST['participation_removal_pressed'])){
 				background-color: #448CB8;
 				border: none;
 			}
+			.btn-success:focus {
+    			outline: 0;
+    			box-shadow: none!important;
+    			cursor: default;
+			}
+
+			.btn-success{
+				background-color: green;
+				border-color: transparent;
+				text-decoration: none;
+				color: white;
+				cursor: default;
+				margin-top: 10px;
+				margin-top: 20px;
+				border-radius: 5px;
+			}
+
+			.btn-waiting:focus {
+    			outline: 0;
+    			box-shadow: none!important;
+    			cursor: default;
+			}
+
+			.btn-waiting{
+				background-color: orange;
+				border-color: transparent;
+				text-decoration: none;
+				color: white;
+				cursor: default;
+				margin-top: 20px;
+				border-radius: 5px;
+			}
 	
 
 		</style>
+
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<title> Register| Kritarth.org</title>
+		<title> Participant| Kritarth.org</title>
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -176,14 +209,40 @@ if(isset($_POST['participation_removal_pressed'])){
 											<form action="" method="POST">
 												<input type="hidden" name="del_event_id" value = "<?php echo $row3['event_id'] ?>">
 											<div class="row">
-												<button name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%"> Remove </button>
+												<button disabled name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%"> Remove </button>
 											</div>
 										</form>
 										</div>
 										
 										<div class="col-lg-7" style=" margin: 10px;">
+
+											<div class="br row">
+												<div class="col-lg-8">
+													<h4 align="left"> Venue :  <?php echo $row3['venue'] ?> </h4>
+												</div>
+												<div class="col-lg-4">
+													<?php
+													if($row2['status']==1){
+														echo '<button type="button" class="btn btn-success">Attended</button>';
+													 
+													}
+													else{
+														$now = time(); // or your date as well
+														$your_date = strtotime("2019-10-19");
+
+														$datediff = $your_date - $now;
+														$diff_rounded = round($datediff / (60 * 60 * 24));
+														echo '<button type="button" class="btn btn-waiting">'.$diff_rounded.' Days Left</button>';
+												}
+												?>
+													
+
+
+												</div>
+											</div>
 											
-											<h4 align="left"> Venue :  <?php echo $row3['venue'] ?> </h4>
+											
+
 
 											<h4 align="left"> Time :  <?php echo $row3['shedule'] ?> </h4>
 											<div>
@@ -254,9 +313,11 @@ if(isset($_POST['participation_removal_pressed'])){
 												<button name="participation_pressed" type="submit" class="btn_style2" style="width: 93%"> Participate </button>
 											</div>
 										</form>
-										<!-- <div class="row">
-												<button onclick="activate_details_box(<?php echo $event_id?>)" class="btn_style1" style="width: 93%;"> Details </button>
-											</div> -->
+										 <div class="row">
+										 	<a href="../info/?ei=<?php echo $event_id ?>">
+												<button class="btn_style1" style="width: 93%;"> Details </button>
+											</a>
+											</div>
 										</div>
 
 									<?php } ?>

@@ -25,41 +25,27 @@
 		
 		<div id="site-content">
 			<?php include 'inc/header.php' ?>
+			<br>
 			
 			<div class="hero">
+				<!-- <iframe style="width: 100%; height: 750px" src="inc/particles.js-master/demo/index.html">
+
+				</iframe> -->
+
+
 				<div class="slider">
 					<ul class="slides">
 
-						<li class="lazy-bg" data-background="dummy/slide-2.jpg">
+						<li class="lazy-bg" data-background="images/ezgif.com-gif-maker.webp">
 							<div class="container">
 									<h2 class="slide-title">Kritarth 5.0</h2>
 									<h3 class="slide-subtitle">19th - 20th October 2019</h3>
-									<!-- <p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p> -->
-
 									<a href="Registration" class="button cut-corner">Register</a>
 							</div>
 						</li>
 
 
-						<li class="lazy-bg" data-background="dummy/slide-1.jpg">
-							<div class="container">
-								<h2 class="slide-title">Kritarth 5.0</h2>
-								<h3 class="slide-subtitle"></h3>
-								<p class="slide-desc">#MillionDollarSmile</p>
-
-								<a href="Events" class="button cut-corner">Events</a>
-							</div>
-						</li>
 						
-						<!-- <li class="lazy-bg" data-background="dummy/slide-3.jpg">
-							<div class="container">
-									<h2 class="slide-title">Kritarth 5.0</h2>
-									<h3 class="slide-subtitle">Less important text goes here</h3>
-									<p class="slide-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Fugiat aliquid minus nemo sed est.</p>
-
-									<a href="#" class="button cut-corner">Read More</a>
-							</div>
-						</li> -->
 					</ul>
 				</div>
 			</div>
