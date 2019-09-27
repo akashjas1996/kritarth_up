@@ -53,7 +53,7 @@ $payload = Array(
     'send_sms' => true,
     'email' => $email,
     'allow_repeated_payments' => false,
-    'mac'= '29ac91de833b49f9ab7a0bde653ac337';
+    'mac'=> '29ac91de833b49f9ab7a0bde653ac337',
 );
 echo $payload['purpose'];
 curl_setopt($ch, CURLOPT_POST, true);
