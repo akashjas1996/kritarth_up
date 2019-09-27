@@ -20,7 +20,7 @@
     <div class="container">
 	<div class="page-header">
         <h1><a href="index.php">Instamojo Payment</a></h1>
-		<form action="new_payment/pay.php" method="POST" accept-charset="utf-8">
+		<form action="pay.php" method="POST" accept-charset="utf-8">
 			<input type="hidden" name="product_name" value="<?php echo $prd_name; ?>"> 
 			<input type="hidden" name="product_price" value="<?php echo $prd_price; ?>"> 
 			<div class="form-group">
