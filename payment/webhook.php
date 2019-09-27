@@ -19,8 +19,11 @@ else{
 //salt= 29ac91de833b49f9ab7a0bde653ac337;
 $mac_calculated = hash_hmac("sha1", implode("|", $data), "4365551a42d547a08c698b341d835d53");
 echo "HELLO WORLD";
-echo $_POST['buyer'];
-echo $_POST['payment_id'];
+if(isset($_POST['buyer'])){
+    echo $_POST['buyer'];
+    echo $_POST['payment_id'];
+    echo $_POST['status'];
+}
 
 if($mac_provided == $mac_calculated){
     // Do something here
