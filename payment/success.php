@@ -1,5 +1,7 @@
 <?php
 include '../inc/dbconnection.php';
+
+echo "Payment Successful";
 $ch = curl_init();
 $vars=$_GET['payment_request_id'];
 curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/'.$vars.'/');
