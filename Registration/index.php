@@ -125,12 +125,7 @@ echo mysqli_error($link);
 										<input required="" name="cont" type="number" placeholder="Contact No."..>
 <select name="inst_name" onchange="college_chosen(this)" style="width: 100%; margin-top: 0px; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none; ">
 	<option value="" disabled selected>Select College</option>
-	<option value="KIIT"> KIIT </option>
-	<option value="KIMS"> KIMS </option>
-  <option value="KSOM"> KSOM </option>
-  <option value="KSOL"> KSOL </option>
-  <option value="KISS"> KISS </option>
-  <option value="Kiit International School"> Kiit International School </option>
+	<option value="KIIT"> Kalinga Group of Institutes </option>
   <option value="Others"> Others </option>
 </select>
 
@@ -206,12 +201,12 @@ echo mysqli_error($link);
 		<script>
 			function college_chosen(a){
 				document.getElementById('fee').style.display="block";
-				if(a.value==='KIIT' || a.value==='KISS' || a.value==='KIMS' || a.value==='KSOM' || a.value==='KSOL' || a.value==='Kiit International School' ){
-				document.getElementById('fee').value="150";
-				document.getElementById('fee_store').value="150";}
-				else{
+				if(a.value==='KIIT'){
 				document.getElementById('fee').value="200";
-				document.getElementById('fee_store').value="150";}
+				document.getElementById('fee_store').value="200";}
+				else{
+				document.getElementById('fee').value="250";
+				document.getElementById('fee_store').value="250";}
 
 				if(a.value==='KIIT'){
 					document.getElementById('year_field').style.display="block";
