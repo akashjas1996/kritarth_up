@@ -36,10 +36,30 @@
 				<div class="slider">
 					<ul class="slides">
 
-						<li class="lazy-bg" data-background="images/ezgif.com-gif-maker.webp">
+						<li class="lazy-bg" style="background-image: url('images/slide2.jpg')">
 							<div class="container">
 									<h2 class="slide-title">Kritarth 5.0</h2>
-									<h3 style="line-height: 10px" class="slide-subtitle">19th - 20th October 2019</h3>
+									<h3 style="line-height: 10px; text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;" class="slide-subtitle" >19<sup>th</sup> - 20<sup>th </sup> Oct 2019</h3>
+									<br><br>
+									<br><br>
+									<a href="Registration" class="button cut-corner">Register</a>
+							</div>
+						</li>
+
+						<li class="lazy-bg" style="background-image: url('images/slide_1.jpg')">
+							<div class="container">
+									<h2 class="slide-title">Kritarth 5.0</h2>
+									<h3 style="line-height: 10px; text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;" class="slide-subtitle" >19<sup>th</sup> - 20<sup>th </sup> Oct 2019</h3>
+									<br><br>
+									<br><br>
+									<a href="Registration" class="button cut-corner">Register</a>
+							</div>
+						</li>
+
+						<li class="lazy-bg" style="background-image: url('images/slide3.jpg')">
+							<div class="container">
+									<h2 class="slide-title">Kritarth 5.0</h2>
+									<h3 style="line-height: 10px; text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;" class="slide-subtitle" >#MillionDollarSmile</h3>
 									<br><br>
 									<br><br>
 									<a href="Registration" class="button cut-corner">Register</a>
