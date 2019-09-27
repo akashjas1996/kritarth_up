@@ -23,6 +23,7 @@ if($mac_provided == $mac_calculated){
     // Do something here
     if($data['status'] == "Credit"){
        //echo "The payment was successful.";
+        echo "HELLO";
         $buyer = $_POST['buyer'];
         $payment_id = $_POST['payment_id ']
         $query_update_payment_status = "UPDATE khata SET payment_status=1, transaction_id='$payment_id'  WHERE email='$buyer'";

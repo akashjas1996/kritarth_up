@@ -15,10 +15,10 @@ $phpvar = json_decode($response);
 //$ch_id = $response['payment_request']['purpose'];
 	//echo $response;
 	$pid = $_GET['payment_id'];
-		$query = "SELECT `kritarth_id` FROM `khata` WHERE `transacction_id` = '$pid'";
-$result = mysqli_query($link, $query);
-            $row = $result->fetch_assoc();
-			$ch_id = $row['kritarth_id'];
+		$query_trs = "SELECT * FROM `khata` WHERE `transacction_id` = '$pid'";
+$result_trs = mysqli_query($link, $query_trs);
+            $row_trs = $result->fetch_assoc();
+			$ch_id = $row_trs['kritarth_id'];
 curl_close($ch); 
 
 ?>
