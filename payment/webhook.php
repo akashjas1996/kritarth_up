@@ -1,7 +1,9 @@
 <?php
 include '../inc/dbconnection.php';
 $data = $_POST;
-$mac_provided = $data['mac'];  // Get the MAC from the POST data
+$mac_provided = $data['mac'];  
+echo $mac_provided;
+// Get the MAC from the POST data
 unset($data['mac']);  // Remove the MAC key from the data.
 
 $ver = explode('.', phpversion());
