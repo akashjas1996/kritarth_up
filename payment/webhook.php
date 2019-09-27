@@ -14,21 +14,25 @@ if($major >= 5 and $minor >= 4){
 else{
      uksort($data, 'strcasecmp');
 }
-
 // You can get the 'salt' from Instamojo's developers page(make sure to log in first): https://www.instamojo.com/developers
 // Pass the 'salt' without the <>.
 //salt= 29ac91de833b49f9ab7a0bde653ac337;
 $mac_calculated = hash_hmac("sha1", implode("|", $data), "29ac91de833b49f9ab7a0bde653ac337");
 
 if($mac_provided == $mac_calculated){
-    echo "MAC is fine";
     // Do something here
     if($data['status'] == "Credit"){
-       echo "The payment was successful.";
+       //echo "The payment was successful.";
+        $buyer = $_POST['buyer'];
+        $payment_id = $_POST['payment_id ']
+        $query_update_payment_status = "UPDATE khata SET payment_status=1, transaction_id='$payment_id'  WHERE email='$buyer'";
     }
     else{
         echo "The payment was unsuccessful";
        // Payment was unsuccessful, mark it as failed in your database
+        $buyer = $_POST['buyer'];
+        $payment_id = $_POST['payment_id ']
+        $query_update_payment_status = "UPDATE khata SET payment_status=-1, transaction_id='$payment_id'  WHERE email='$buyer'";
     }
 }
 else{
