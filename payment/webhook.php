@@ -1,5 +1,5 @@
 <?php
-
+include '../inc/dbconnection.php';
 $data = $_POST;
 $mac_provided = $data['mac'];  // Get the MAC from the POST data
 unset($data['mac']);  // Remove the MAC key from the data.
@@ -26,6 +26,7 @@ if($mac_provided == $mac_calculated){
         $buyer = $_POST['buyer'];
         $payment_id = $_POST['payment_id ']
         $query_update_payment_status = "UPDATE khata SET payment_status=1, transaction_id='$payment_id'  WHERE email='$buyer'";
+        $res_update_payment_status($link, $query_update_payment_status);
     }
     else{
         echo "The payment was unsuccessful";
@@ -33,6 +34,7 @@ if($mac_provided == $mac_calculated){
         $buyer = $_POST['buyer'];
         $payment_id = $_POST['payment_id ']
         $query_update_payment_status = "UPDATE khata SET payment_status=-1, transaction_id='$payment_id'  WHERE email='$buyer'";
+        $res_update_payment_status($link, $res_update_payment_status);
     }
 }
 else{
