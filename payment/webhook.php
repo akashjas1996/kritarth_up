@@ -20,7 +20,6 @@ else{
 // Pass the 'salt' without the <>.
 //salt= 29ac91de833b49f9ab7a0bde653ac337;
 $mac_calculated = hash_hmac("sha1", implode("|", $data), "4365551a42d547a08c698b341d835d53");
-echo "HELLO WORLD";
 if(isset($_POST['buyer'])){
     echo $_POST['buyer'];
     echo $_POST['payment_id'];
@@ -34,10 +33,10 @@ if($mac_provided == $mac_calculated){
     // Do something here
     if($data['status'] == "Credit"){
        //echo "The payment was successful.";
-        echo "HELLO";
         $buyer = $_POST['buyer'];
         $payment_id = $_POST['payment_id '];
-        $query_update_payment_status = "UPDATE khata SET payment_status=1, transaction_id='$payment_id'  WHERE email='$buyer'";
+        $date_time = date('Y-m-d h-m-s');
+        $query_update_payment_status = "UPDATE khata SET payment_status=1, transaction_id='$payment_id', payment_date_time='$date_time' WHERE email='$buyer'";
         $res_update_payment_status = mysqli_query($link, $query_update_payment_status);
     }
     else{
