@@ -68,6 +68,58 @@ if(isset($_POST['participation_removal_pressed'])){
 <html lang="en">
 	<head>
 		<style>
+			.payment_btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.payment_btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.payment_disabled_btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.payment_disabled_btn:hover {
+  cursor: default;
+  text-decoration: none;
+  border: none;
+}
+			.short_description_text:hover{
+				text-shadow: 1px 1px #000000;
+			}
 			.card_lg{
 				/*background:rgba(255,255,255,0.1);*/
 				/*height: 200px;*/
@@ -178,7 +230,30 @@ if(isset($_POST['participation_removal_pressed'])){
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<p> Payment Button will be added soon. Stay Tuned. </p>
+						<p> Payment for participants whose mobile number isn't updated shall be notified. </p>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12">
+									<?php
+										$kritarth_id = $_SESSION['k_id'];
+										$query_contact_check = "SELECT * FROM khata WHERE kritarth_id='$kritarth_id'";
+										$res_contact_check =  mysqli_query($link, $query_contact_check);
+										$row = mysqli_fetch_assoc($res_contact_check);
+										if($row['contact']>0){
+											echo '
+											<a href="../payment/request.php">
+											<button class="payment_btn">Pay Now</button>
+											</a>
+											';
+										}
+										else{
+											echo 'Your mobile number is not updated. You will get an update. Stay Tuned.';
+										}
+									 ?>
+									
+								</div>
+							</div>
+						</div>
 						<br>
 						<hr>
 						<h1 style="color: #448CB8"> Participating Events </h1>
@@ -248,7 +323,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											<div>
 
 											</div>
-											<div style="cursor: pointer;">
+											<div style="cursor: pointer;" class="short_description_text">
 											<p onclick="show_long_description(<?php echo $row3['event_id'] ?>)" align="left"> <b> About : </b> <?php echo nl2br2($row3['short_description'] .' Read more...') ?>  </p>
 											</div>
 
