@@ -25,7 +25,7 @@
 	<h3 style="color:#6da552">Thank You, Payment succus!!</h3>
 <?php
 include 'src/instamojo.php';
-$api = new Instamojo\Instamojo('YOU_PRIVATE_API_KEY', 'YOUR_PRIVATE_AUTH_TOKEN','https://test.instamojo.com/api/1.1/');
+$api = new Instamojo\Instamojo('a91b25dc18422099c1266d3b0a496f4e', '8f527f926a7091bd509fae341af24e55','https://test.instamojo.com/api/1.1/');
 $payid = $_GET["payment_request_id"];
 try {
     $response = $api->paymentRequestStatus($payid);

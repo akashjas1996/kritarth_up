@@ -26,8 +26,8 @@ curl_setopt($ch, CURLOPT_HEADER, FALSE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
 curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array("X-Api-Key:a91b25dc18422099c1266d3b0a496f4e",
-                  "X-Auth-Token:8f527f926a7091bd509fae341af24e55"));
+            array("X-Api-Key:test_d73f7f56f5629d084e4e8aeb22b",
+                  "X-Auth-Token:test_2439f47e0e504d0f8b3be281e02"));
 
 if(isset($_SESSION['k_id'])){
     $kid = $_SESSION['k_id'];
