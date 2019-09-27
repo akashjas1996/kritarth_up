@@ -19,7 +19,7 @@ $phpvar = json_decode($response);
 	$pid = $_GET['payment_id'];
 		$query_trs = "SELECT * FROM `khata` WHERE `transaction_id` = '$pid'";
 $result_trs = mysqli_query($link, $query_trs);
-            $row_trs = $result->fetch_assoc();
+            $row_trs = $result_trs->fetch_assoc();
 			$ch_id = $row_trs['kritarth_id'];
 curl_close($ch); 
 
