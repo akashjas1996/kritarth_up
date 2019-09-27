@@ -1,5 +1,5 @@
 <?php
-
+include '../inc/dbconnection.php';
 $ch = curl_init();
 $vars=$_GET['payment_request_id'];
 curl_setopt($ch, CURLOPT_URL, 'https://www.instamojo.com/api/1.1/payment-requests/'.$vars.'/');
@@ -13,12 +13,6 @@ $response = curl_exec($ch);
 
 $phpvar = json_decode($response);
 //$ch_id = $response['payment_request']['purpose'];
-include("dbcred.php");
-$link = mysqli_connect("51.68.139.41","chimera","szkzj7muFrEizlg3", "chimera_");
-         if (mysqli_connect_error()) {  
-            die("Failed to connect to MySQL: (" . mysqli_connect_error() . ") " . mysqli_error($link));     
-        }
-
 	//echo $response;
 	$pid = $_GET['payment_id'];
 		$query = "SELECT `CH_ID` FROM `payment` WHERE `payment_id` = '$pid'";
