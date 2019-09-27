@@ -40,8 +40,8 @@ if($mac_provided == $mac_calculated){
         $res_update_payment_status = mysqli_query($link, $query_update_payment_status);
     }
     else{
+        // Payment was unsuccessful, mark it as failed in your database
         echo "The payment was unsuccessful";
-       // Payment was unsuccessful, mark it as failed in your database
         $buyer = $_POST['buyer'];
         $payment_id = $_POST['payment_id '];
         $query_update_payment_status = "UPDATE khata SET payment_status=9, transaction_id='$payment_id'  WHERE email='$buyer'";
