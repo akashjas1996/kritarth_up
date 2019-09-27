@@ -24,6 +24,9 @@ if(isset($_POST['buyer'])){
     echo $_POST['payment_id'];
     echo $_POST['status'];
 }
+else{
+    echo "Not got";
+}
 
 if($mac_provided == $mac_calculated){
     // Do something here
