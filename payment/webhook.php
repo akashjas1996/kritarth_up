@@ -24,9 +24,10 @@ if($mac_provided == $mac_calculated){
     echo "MAC is fine";
     // Do something here
     if($data['status'] == "Credit"){
-       // Payment was successful, mark it as completed in your database  
+       echo "The payment was successful.";
     }
     else{
+        echo "The payment was unsuccessful";
        // Payment was unsuccessful, mark it as failed in your database
     }
 }
