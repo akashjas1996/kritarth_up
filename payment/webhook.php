@@ -25,16 +25,16 @@ if($mac_provided == $mac_calculated){
        //echo "The payment was successful.";
         echo "HELLO";
         $buyer = $_POST['buyer'];
-        $payment_id = $_POST['payment_id ']
+        $payment_id = $_POST['payment_id '];
         $query_update_payment_status = "UPDATE khata SET payment_status=1, transaction_id='$payment_id'  WHERE email='$buyer'";
-        $res_update_payment_status($link, $query_update_payment_status);
+        $res_update_payment_status = mysqli_query($link, $query_update_payment_status);
     }
     else{
         echo "The payment was unsuccessful";
        // Payment was unsuccessful, mark it as failed in your database
         $buyer = $_POST['buyer'];
         $payment_id = $_POST['payment_id ']
-        $query_update_payment_status = "UPDATE khata SET payment_status=-1, transaction_id='$payment_id'  WHERE email='$buyer'";
+        $query_update_payment_status = "UPDATE khata SET payment_status=9, transaction_id='$payment_id'  WHERE email='$buyer'";
         $res_update_payment_status($link, $res_update_payment_status);
     }
 }
