@@ -50,5 +50,12 @@ curl_close($ch);
 	</div>
 </div>
 
+<div class="container">
+	<center>
+		<div class="row">
+			<a href="https://kritarth.org/participant"> Click Here </a>
+		</div>
+	</center>
+</div>
 </body>
 </html>
