@@ -240,11 +240,17 @@ if(isset($_POST['participation_removal_pressed'])){
 										$res_contact_check =  mysqli_query($link, $query_contact_check);
 										$row = mysqli_fetch_assoc($res_contact_check);
 										if($row['contact']>0){
-											echo '
+											if($row['payment_status']==1){
+												echo '<img style="width:90px" src="../images/paid.png">';
+											}
+											else{
+												echo '
 											<a href="../payment/request.php">
 											<button class="payment_btn">Pay Now</button>
 											</a>
 											';
+											}
+											
 										}
 										else{
 											echo 'Your mobile number is not updated. You will get an update. Stay Tuned.';
