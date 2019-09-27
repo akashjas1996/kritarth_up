@@ -1,7 +1,7 @@
 <?php
 include '../inc/dbconnection.php';
 
-echo "Payment Successful";
+// echo "Payment Successful";
 $ch = curl_init();
 $vars=$_GET['payment_request_id'];
 curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/'.$vars.'/');
@@ -21,6 +21,7 @@ $phpvar = json_decode($response);
 $result_trs = mysqli_query($link, $query_trs);
             $row_trs = $result_trs->fetch_assoc();
 			$ch_id = $row_trs['kritarth_id'];
+			$client_name = $row_trs['name'];
 curl_close($ch); 
 
 ?>
@@ -43,7 +44,7 @@ curl_close($ch);
 <body>
 <div class="container" style="background: white;">
 	<div class="col s12 m2 z-depth-5 center-align" style="margin-top: 15%;padding: 10px; ">
-	<p><b><h4>You have successfully completed your payment!</h4></b></p>
+	<p><b><h4>Hey, <?php echo $client_name.' ' ?> You have successfully completed your payment!</h4></b></p>
 	<p><h5><b>KRITARTH ID:</b> <?php echo $ch_id;?></h5></p>
 	<p><h5><b>Payment ID:</b> <?php echo $_GET['payment_id'];?></h5></p>
 	</div>
