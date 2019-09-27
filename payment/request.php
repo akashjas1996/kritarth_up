@@ -35,6 +35,7 @@ $query_getinfo = "SELECT * FROM `khata` WHERE kritarth_id = '$kid'";
 $result_getinfo = mysqli_query($link, $query_getinfo);
 $row_getInfo = mysqli_fetch_assoc($result_getinfo);
 $mac = '4365551a42d547a08c698b341d835d53';
+$salt = '4365551a42d547a08c698b341d835d53';
 $id = $kid;
 $name = $row_getInfo['name'];
 $email = $row_getInfo['email'];
