@@ -15,22 +15,19 @@ $phpvar = json_decode($response);
 //$ch_id = $response['payment_request']['purpose'];
 	//echo $response;
 	$pid = $_GET['payment_id'];
-		$query_trs = "SELECT * FROM `khata` WHERE `transacction_id` = '$pid'";
+		$query_trs = "SELECT * FROM `khata` WHERE `transaction_id` = '$pid'";
 $result_trs = mysqli_query($link, $query_trs);
             $row_trs = $result->fetch_assoc();
 			$ch_id = $row_trs['kritarth_id'];
 curl_close($ch); 
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Payment Successful</title>
-	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
 <style type="text/css">
 	html { 
 		  background: url(background.jpg) no-repeat center center fixed; 
@@ -40,14 +37,12 @@ curl_close($ch);
 		  background-size: cover;
 		}
 </style>
-
 </head>
 <body>
-
 <div class="container" style="background: white;">
 	<div class="col s12 m2 z-depth-5 center-align" style="margin-top: 15%;padding: 10px; ">
 	<p><b><h4>You have successfully completed your payment!</h4></b></p>
-	<p><h5><b>CHIMERA ID:</b> <?php echo $ch_id;?></h5></p>
+	<p><h5><b>KRITARTH ID:</b> <?php echo $ch_id;?></h5></p>
 	<p><h5><b>Payment ID:</b> <?php echo $_GET['payment_id'];?></h5></p>
 	</div>
 </div>
