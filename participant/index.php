@@ -29,6 +29,64 @@ return $string;
 }
 
 
+if(isset($_POST['mobile_verify'])){
+	$kid = $_POST['kid_otp'];
+	$enteredOtp = $_POST['otp_no'];
+	$query_vr = "SELECT * FROM khata where kritarth_id='$kid'";
+	$res_vr = mysqli_query($link, $query_vr);
+	$row_vr = mysqli_fetch_assoc($res_vr);
+	if($row_vr['mob_otp']==$enteredOtp){
+		$query_mark = "UPDATE khata SET mob_verified=1 , mob_otp=1947 WHERE kritarth_id='$kid'";
+		$res_mark = mysqli_query($link, $query_mark);
+		echo '<script type="text/javascript">';
+  		echo 'setTimeout(function () { swal("Thanks!","Mobile Number Verified.","success");';
+  		echo '}, 1000);
+  		</script>';
+	}
+	else{
+		echo "OTP DID NOT MATCH";
+	}
+}
+
+if(isset($_POST['otp_sent'])){
+
+	$kid = $_SESSION['k_id'];
+	$digits = 4;
+	$otp =  rand(pow(10, $digits-1), pow(10, $digits)-1);
+	$query_set_hash = "UPDATE khata SET mob_otp='$otp' WHERE kritarth_id='$kid'";
+	$res_set_hash = mysqli_query($link, $query_set_hash);
+	$mbl = $_POST['mobile_no'];
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+   CURLOPT_URL => "https://api.msg91.com/api/sendhttp.php?mobiles=".$mbl."&authkey=296366AFcEP9oki5d8fad56&route=4&sender=KRTRTH&message=".$otp." is your verification Code.",
+
+
+
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_SSL_VERIFYHOST => 0,
+  CURLOPT_SSL_VERIFYPEER => 0,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+   // echo $response;
+}
+}
+
+
 
 if(isset($_POST['phone_save'])){
 	$kid = $_POST['kid'];
@@ -341,7 +399,33 @@ if(isset($_POST['participation_removal_pressed'])){
 					<?php	}
 
 						 ?>
-									
+
+						 <?php
+						 if($row['contact']>0 && $row['mob_verified']==0){
+						 	echo '<br><strong>YOUR Mobile number has not been verified.</strong>';
+
+						  ?>
+
+						  <form action="" method="POST">
+						  	<input type="hidden" name="mobile_no" value="<?php echo  $row['contact'] ?>">
+						  	<input type="submit" name="otp_sent" value="SEND OTP">
+						  </form>
+
+						 <br>
+						<div class="container warning-block">
+							<div class="row">
+								<div class="closebtn">x</div>
+								<form method="POST" action="">
+									<input name="kid_otp" type="hidden" value ="<?php echo $kritarth_id ?>"  >
+									<label style="color: black" for="otp"> Enter OTP : </label>
+									<input id="otp" name="otp_no" style="width:40%; margin-left:20px; margin-right: 20px" type="text">
+									<input class="phone_save" type="submit" name ="mobile_verify">
+								</form>
+							</div>
+						</div>
+						<br>
+
+						  <?php } ?>			
 								</div>
 							</div>
 						</div>
