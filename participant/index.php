@@ -44,7 +44,10 @@ if(isset($_POST['mobile_verify'])){
   		</script>';
 	}
 	else{
-		echo "OTP DID NOT MATCH";
+		echo '<script type="text/javascript">';
+  		echo 'setTimeout(function () { swal("Sorry!","The OTP did not match.","warning");';
+  		echo '}, 1000);
+  		</script>';
 	}
 }
 
