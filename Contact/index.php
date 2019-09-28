@@ -13,6 +13,8 @@
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="../inc/style.css">
+
+    <link rel="shortcut icon" href="../images/favicon.png">
 		<style>
         .parallax {
   /* The image used */

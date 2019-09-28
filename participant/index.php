@@ -39,6 +39,15 @@ if(isset($_POST['phone_save'])){
 	echo mysqli_error($link);
 }
 
+if(isset($_POST['roll_save'])){
+	$kid = $_POST['kid_roll'];
+	// echo $kid;
+	$roll_no = $_POST['rollNo'];
+	$query_update_phone = "UPDATE khata SET kiit_roll='$roll_no' WHERE kritarth_id='$kid'";
+	//echo $query_update_phone;
+	$res_update_phone = mysqli_query($link, $query_update_phone);
+}
+
 
 
 if(isset($_POST['participation_pressed'])){
@@ -236,6 +245,7 @@ if(isset($_POST['participation_removal_pressed'])){
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="../inc/style.css">
+		<link rel="shortcut icon" href="../images/favicon.png">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -309,6 +319,28 @@ if(isset($_POST['participation_removal_pressed'])){
 						<br>
 										<?php }
 									 ?>
+									 <br>
+						<?php
+
+						if($row['institute']=='KIIT' && $row['kiit_roll']==0){
+							?>
+
+							<div class="container warning-block">
+							<div class="row">
+								<div class="closebtn">x</div>
+								<form method="POST" action="">
+									<input name="kid_roll" type="hidden" value ="<?php echo $kritarth_id ?>"  >
+									<label style="color: black" for="info">Enter KIIT Roll No. : </label>
+									<input id="info" name="rollNo" style="width:40%; margin-left:20px; margin-right: 20px" type="text">
+									<input class="phone_save" type="submit" name ="roll_save">
+								</form>
+							</div>
+						</div>
+
+
+					<?php	}
+
+						 ?>
 									
 								</div>
 							</div>
