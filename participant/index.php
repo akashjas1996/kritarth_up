@@ -271,7 +271,7 @@ if(isset($_POST['participation_removal_pressed'])){
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
-						<p> Payment for participants whose mobile number isn't updated shall be notified. </p>
+						<p> Note that FIRST YEAR B.TECH students won't be allowed for the event and star night. </p>
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-12">
