@@ -225,17 +225,30 @@ if(isset($_POST['participation_removal_pressed'])){
 				height: 250px;
 				background-repeat: no-repeat;
 				background-size: cover;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  				transition: 0.3s;
 				/*background-size: auto;*/
 				/*background-size:100% 100%;*/
 			}
 			.btn_style1{
 				background-color: #D06A54;
-				border: none;
+				/*bordersssass: none;*/
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  				transition: 0.3s;
 			}
-
+			.btn_style1:hover{
+				box-shadow: 0 8px 6px 0 rgba(0,0,0,0.4);
+  				transition: 0.2s;
+			}
 			.btn_style2{
 				background-color: #448CB8;
-				border: none;
+				/*border: none;*/
+				box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5);
+  				transition: 0.3s;
+			}
+			.btn_style2:hover{
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  				transition: 0.3s;
 			}
 			.btn-success:focus {
     			outline: 0;
@@ -470,7 +483,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											<form action="" method="POST">
 												<input type="hidden" name="del_event_id" value = "<?php echo $row3['event_id'] ?>">
 											<div class="row">
-												<button disabled name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%"> Remove </button>
+												<button disabled name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%; color: black"> Remove </button>
 											</div>
 										</form>
 										</div>
