@@ -26,6 +26,18 @@ if(isset($_POST['register'])){
 	$email =  $_POST['email'];
 	$password = $_POST['password1'];
 	//echo $_POST['password2'];
+	if(isset($_POST['kiit_roll'])){
+		$kiitRoll = $_POST['kiit_roll'];
+	}
+	else{
+		$kiitRoll = 0;
+	}
+	if(isset($_POST['otherINST'])){
+		$otherinst = $_POST['otherINST'];
+	}
+	else{
+			$otherinst = null;
+		}
 	$inst =  $_POST['inst_name'];
 	$fee_value = $_POST['fee_value'];
 	$contact = $_POST['cont'];
@@ -45,12 +57,13 @@ if(isset($_POST['register'])){
 			$query_add = "INSERT INTO `khata`
 (`email`,
 `name`,
+`kiit_roll`,`other_inst`,
 `institute`,`contact`,
 `password`,
 `amt`)
 VALUES
-('$email','$name','$inst','$contact','$password','$fee_value');";
-
+('$email','$name', '$kiitRoll', '$otherinst', '$inst' ,'$contact','$password','$fee_value');";
+// echo $query_add;
 $res_add = mysqli_query($link, $query_add);
 echo mysqli_error($link);
 		echo '<script type="text/javascript">';
@@ -146,6 +159,9 @@ echo mysqli_error($link);
 		Fourth
 	</option>
 </select> -->
+<input id="other_inst" name="otherINST" type="text" placeholder="Your Institute Name" style="display: none">
+
+<input id="kiit_roll" name="kiit_roll" type="text" placeholder="Your Kiit Roll No" style="display: none">
 
 <input id="fee" type="text" value="200" disabled name="amount" style="display: none;"> 
 <input id="fee_store" type="hidden" name="fee_value"  value="200">
@@ -202,11 +218,16 @@ echo mysqli_error($link);
 			function college_chosen(a){
 				document.getElementById('fee').style.display="block";
 				if(a.value==='KIIT'){
+				document.getElementById('kiit_roll').style.display="block";
 				document.getElementById('fee').value="200";
+				document.getElementById('other_inst').style.display="none";
 				document.getElementById('fee_store').value="200";}
-				else{
+				else if(a.value==='Others'){
+				document.getElementById('kiit_roll').style.display="none";
 				document.getElementById('fee').value="250";
-				document.getElementById('fee_store').value="250";}
+				document.getElementById('fee_store').value="250";
+				document.getElementById('other_inst').style.display="block";
+			}
 
 				// if(a.value==='KIIT'){
 				// 	document.getElementById('year_field').style.display="block";
