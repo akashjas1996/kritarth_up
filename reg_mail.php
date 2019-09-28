@@ -162,19 +162,19 @@ EOF;
      if($mail->send())
       {
           
-           redirect("http://kritarth.org?msg=success");
+           redirect("http://kritarth.org/login");
            exit;
       }
       else
       {
            
-           redirect("http://kritarth.org?msg=failed");
+           redirect("http://kritarth.org/login");
       }
  }
  else 
  {   
     
-     redirect("http://kritarth.org?msg=mail_invalid");
+     redirect("http://kritarth.org/login");
  }
 ob_end_flush();
 ?>
