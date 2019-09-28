@@ -6,6 +6,13 @@
 			.cards{
 				width: 100%;
 				padding: 20px;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  				transition: 0.3s;
+			}
+
+			.cards:hover{
+				-webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+  				filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
 			}
 
 			.event_name {
