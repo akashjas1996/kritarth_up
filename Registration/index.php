@@ -85,7 +85,7 @@ echo mysqli_error($link);
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../inc/style.css">
+		<link rel="stylesheet" href="../inc/style2.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -125,13 +125,13 @@ echo mysqli_error($link);
 										<input required="" name="cont" type="number" placeholder="Contact No."..>
 <select name="inst_name" onchange="college_chosen(this)" style="width: 100%; margin-top: 0px; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none; ">
 	<option value="" disabled selected>Select College</option>
-	<option value="KIIT"> Kalinga Group of Institutes </option>
+	<option value="KIIT"> KIIT Group of Institutes </option>
   <option value="Others"> Others </option>
 </select>
 
 
 
-<select id="year_field" onchange="check_for_firstYear(this)" style="display:none;width: 100%; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none;">
+<!-- <select id="year_field" onchange="check_for_firstYear(this)" style="display:none;width: 100%; margin-bottom: 10px; height: 40px; border-radius: 0px; background-color: #353535; color: #757575; border: none;">
 <option  value="" disabled selected>Select Year</option>
 	<option disabled>
 		First (Not allowed)
@@ -145,7 +145,7 @@ echo mysqli_error($link);
 	<option>
 		Fourth
 	</option>
-</select>
+</select> -->
 
 <input id="fee" type="text" value="200" disabled name="amount" style="display: none;"> 
 <input id="fee_store" type="hidden" name="fee_value"  value="200">
@@ -208,19 +208,19 @@ echo mysqli_error($link);
 				document.getElementById('fee').value="250";
 				document.getElementById('fee_store').value="250";}
 
-				if(a.value==='KIIT'){
-					document.getElementById('year_field').style.display="block";
-				}
+				// if(a.value==='KIIT'){
+				// 	document.getElementById('year_field').style.display="block";
+				// }
 			}
 		</script>
 
-		<script>
+		<!-- <script>
 			function check_for_firstYear(arg){
 				if(agr.value==='First'){
 					console.log("First year");
 				}
 			}
-		</script>
+		</script> -->
 		
 	</body>
 
