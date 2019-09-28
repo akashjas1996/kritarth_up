@@ -306,7 +306,7 @@ if(isset($_POST['participation_removal_pressed'])){
 								</form>
 							</div>
 						</div>
-						<br>';
+						<br>
 										<?php }
 									 ?>
 									
