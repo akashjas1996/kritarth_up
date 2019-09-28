@@ -10,6 +10,7 @@
 						<ul class="menu">
 							<!-- current-menu-item -->
 							<li class="menu-item"><a href="../">Home</a></li>
+							
 							<li class="menu-item"><a href="../Gallery">Gallery</a></li>
 							<li class="menu-item"><a href="../Events">Events</a></li>
 							<li class="menu-item"><a href="../Contact">Contact</a></li>

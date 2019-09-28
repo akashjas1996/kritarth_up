@@ -12,7 +12,7 @@
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../inc/style2.css">
+		<link rel="stylesheet" href="../inc/style.css">
 		<style>
         .parallax {
   /* The image used */

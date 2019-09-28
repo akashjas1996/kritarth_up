@@ -30,17 +30,6 @@ return $string;
 
 
 
-if(isset($_POST['phone_save'])){
-	$kid = $_POST['kid'];
-	// echo $kid;
-	$phone_no = $_POST['cont_no'];
-	$query_update_phone = "UPDATE khata SET contact='$phone_no' WHERE kritarth_id='$kid'";
-	$res_update_phone = mysqli_query($link, $query_update_phone);
-	echo mysqli_error($link);
-}
-
-
-
 if(isset($_POST['participation_pressed'])){
 	$evnt =  $_POST['req_event'];
 	$kid =  $_POST['k_id'];
@@ -191,36 +180,6 @@ if(isset($_POST['participation_removal_pressed'])){
 				margin-top: 20px;
 				border-radius: 5px;
 			}
-			.warning-block{
-				background-color: #77aaff;
-				/*border: 1px solid black;*/
-				 padding: 10px;
-
-				  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 5px 6px #ccc;  /* Ope*/
-   
-			}
-
-			.phone_save{
-				/*background-color: green;*/
-			}
-
-.closebtn {
-  /*margin-left: 15px;*/
-  margin-right: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-}
 	
 
 		</style>
@@ -235,7 +194,7 @@ if(isset($_POST['participation_removal_pressed'])){
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../inc/style2.css">
+		<link rel="stylesheet" href="../inc/style.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -293,27 +252,15 @@ if(isset($_POST['participation_removal_pressed'])){
 											}
 											
 										}
-										else{ 
-											?> <br>
-						<div class="container warning-block">
-							<div class="row">
-								<div class="closebtn">x</div>
-								<form method="POST" action="">
-									<input name="kid" type="hidden" value ="<?php echo $kritarth_id ?>"  >
-									<label style="color: black" for="info">Enter Mobile Number : </label>
-									<input id="info" name="cont_no" style="width:40%; margin-left:20px; margin-right: 20px" type="text">
-									<input class="phone_save" type="submit" name ="phone_save">
-								</form>
-							</div>
-						</div>
-						<br>';
-										<?php }
+										else{
+											echo 'Your mobile number is not updated. You will get an update. Stay Tuned.';
+										}
 									 ?>
 									
 								</div>
 							</div>
 						</div>
-						
+						<br>
 						<hr>
 						<h1 style="color: #448CB8"> Participating Events </h1>
 						<div class="container">
