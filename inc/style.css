@@ -1858,7 +1858,7 @@ body {
         content: "/";
         position: absolute;
         right: 0;
-        color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
         font-weight: 300; }
 
 /* line 105, sass/layout/_header.scss */
