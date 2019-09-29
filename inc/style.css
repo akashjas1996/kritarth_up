@@ -1783,7 +1783,7 @@ body {
   /* line 30, sass/layout/_header.scss */
   .main-navigation .toggle-menu {
     background: none;
-    color: #ffffff !important;
+    background-color: white;
     font-size: 18px;
     font-size: 1.125em;
     border: none;
@@ -1791,7 +1791,6 @@ body {
     position: relative;
     top: 40px;
     display: none;
-    color: #ffffff !important;
      }
     /* line 40, sass/layout/_header.scss */
     .main-navigation .toggle-menu:hover, .main-navigation .toggle-menu:active, .main-navigation .toggle-menu.active {
