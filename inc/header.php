@@ -1,3 +1,26 @@
+<head>
+	<style>
+		.main-navigation .menu a {
+      display: block;
+      position: relative;
+      padding: 45px 20px;
+      color: #ffffff;
+      font-size: 15px;
+      font-size: 0.9375em;
+      font-weight: 600;
+      text-decoration: none;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+      /* line 94, sass/layout/_header.scss */
+      .main-navigation .menu a:after {
+        content: "/";
+        position: absolute;
+        right: 0;
+        color: #ffffff;
+        font-weight: 300; }
+	</style>
+</head>
+
 <header class="site-header">
 				<div class="container" style="background-color: gray" >
 					<a href="../" id="branding" >
