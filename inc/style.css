@@ -1778,18 +1778,21 @@ body {
 
 /* line 28, sass/layout/_header.scss */
 .main-navigation {
+  color: #ffffff !important;
   float: right; }
   /* line 30, sass/layout/_header.scss */
   .main-navigation .toggle-menu {
     background: none;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 18px;
     font-size: 1.125em;
     border: none;
     outline: none;
     position: relative;
     top: 40px;
-    display: none; }
+    display: none;
+    color: #ffffff !important;
+     }
     /* line 40, sass/layout/_header.scss */
     .main-navigation .toggle-menu:hover, .main-navigation .toggle-menu:active, .main-navigation .toggle-menu.active {
       color: #fd5927; }
