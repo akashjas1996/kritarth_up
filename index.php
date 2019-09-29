@@ -14,6 +14,7 @@
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="shortcut icon" href="images/favicon.png">
+		<meta name="theme-color" content="#858585">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
