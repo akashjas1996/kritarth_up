@@ -1878,7 +1878,7 @@ body {
     /* line 117, sass/layout/_header.scss */
     .mobile-menu .menu a {
       padding: 10px;
-      color: #848484;
+      color: #000000;
       text-decoration: none;
       display: block;
       background: #191919; }
