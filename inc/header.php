@@ -1,5 +1,9 @@
 <head>
 	<style>
+		.main-navigation {
+  color: #ffffff !important;
+  float: right; }
+  
 		.main-navigation .menu a {
       display: block;
       position: relative;
