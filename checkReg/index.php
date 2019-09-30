@@ -161,7 +161,7 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$count.'</td>';
 									$count=$count+1;
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
-									if($row_get_edit['kiit_roll']>0){
+									if($row_get_edit['kiit_roll']!='0'){
 										echo '<td>'.$row_get_edit['kiit_roll'].'</td>';
 									}
 									else{
