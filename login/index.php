@@ -23,6 +23,10 @@ function redirect($url)
     }
 }
 
+if(isset($_GET['url']=='admin')){
+	redirect('../admin');
+}
+
 if(isset($_POST['login'])){
 	$email =  $_POST['email'];
 	//echo $email;
