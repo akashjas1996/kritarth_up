@@ -163,7 +163,7 @@ table.blueTable tfoot .links a{
 									else{
 										$pay = "NOT PAID";
 									}
-									echo '<td>'$pay'</td>'; ?>
+									echo '<td>'.$pay.'</td>'; ?>
 									<td> <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
 									<option disabled selected="selected" >
 										<?php
