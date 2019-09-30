@@ -134,7 +134,7 @@ table.blueTable tfoot .links a{
 							// $email = $row_get_email['email'];
 							// echo $row_get_email['name']." !";
 						  ?></h2> </center>
-						  <?php $count=0; ?>
+						  <?php $count=1; ?>
 						<div class="row">
 							<table class="blueTable">
 								<tr>
