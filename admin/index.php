@@ -155,12 +155,7 @@ table.blueTable tfoot .links a{
 									$row_get_edit = mysqli_fetch_assoc($res_get_edit);
 									$eid=$row_get_edit['event_id'];
 									echo '<td>'.$row_get_edit['event_id'].'</td>';
-									if($row_get_edit['kiit_roll']>0){
-										echo '<td>'.$row_get_edit['kiit_roll'].'</td>';
-									}
-									else{
-										echo '<td><p>Other Institute</p></td>';
-									}
+									
 									echo '<td>'.$row_get_edit['event_name'].'</td>';
 									echo '<td>'.$row_get_edit['shedule'].'</td>';
 									echo '<td>'.$row_get_edit['venue'].'</td>';
