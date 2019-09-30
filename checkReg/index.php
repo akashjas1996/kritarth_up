@@ -157,7 +157,13 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
 									echo '<td>'.$row_std_details['name'].'</td>';
 									echo '<td>'.$row_std_details['email'].'</td>';
-									echo '<td>'.$row_std_details['payment_status'].'</td>'; ?>
+									if($row_std_details['payment_status']==1){
+										$pay = "PAID";
+									}
+									else{
+										$pay = "NOT PAID";
+									}
+									echo '<td>'$pay'</td>'; ?>
 									<td> <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
 									<option disabled selected="selected" >
 										<?php
