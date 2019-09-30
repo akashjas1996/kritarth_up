@@ -156,7 +156,7 @@ table.blueTable tfoot .links a{
 									echo '<td> <center> <button> EDIT  </button> </center> </td>';
 									echo '<td> <center> <a href="checkReg?eid='.$eid.'"> <button> Check Registrations  </button> </a> </center> </td>';
 
-									echo '<td> <form method="POST" action="https://kritarth.org/checkReg" > 
+									echo '<td> <form method="POST" action="../checkReg" > 
 											<input  type="hidden" name="eid" value="'.$eid.'"> 
 											<input type="submit"> 
 											</form> 

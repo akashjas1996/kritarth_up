@@ -123,7 +123,7 @@ table.blueTable tfoot .links a{
 					<div class="container">
 						<center> <h2 class="page-title">
 							<?php $kid =  $_SESSION['k_id'];
-							$event_id = $_GET['eid'];
+							$event_id = $_POST['eid'];
 							$query_ev = "SELECT * FROM pratispradha WHERE event_id='$event_id'";
 							$res_ev = mysqli_query($link, $query_ev);
 							$row_ev = mysqli_fetch_assoc($res_ev);
@@ -145,14 +145,8 @@ table.blueTable tfoot .links a{
 								</tr>
 
 							<?php
-							if(isset($_POST['eid'])){
-									$eid = $_POST['eid'];
-							}
-							else{
-								echo "POST not set";
-							}
 								
-								$query_get_std = "SELECT * FROM pratispradha_chunao WHERE event_id='$eid'";
+								$query_get_std = "SELECT * FROM pratispradha_chunao WHERE event_id='$event_id'";
 								echo $query_get_std;
 								$res_get_std = mysqli_query($link, $query_get_std);
 								while($row_get_std = mysqli_fetch_assoc($res_get_std)){
