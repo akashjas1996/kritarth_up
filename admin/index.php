@@ -154,15 +154,15 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_get_edit['shedule'].'</td>';
 									echo '<td>'.$row_get_edit['venue'].'</td>';
 									echo '<td> <center> <button> EDIT  </button> </center> </td>';
-									echo '<td> <center> <a href="checkReg?eid='.$eid.'"> <button> Check Registrations  </button> </a> </center> </td>';
+									echo '<td> <center> <a href="checkReg?eid='.$eid.'"> <button> Check Registrations  </button> </a> </center> </td>'; ?>
 
-									echo '<td> <form method="POST" action="../checkReg" > 
-											<input  type="hidden" name="eid" value="'.$eid.'"> 
+									<td> <form method="POST" action="../checkReg" > 
+											<input type="hidden" name="eid" value="<?php echo $eid ?>"> 
 											<input type="submit"> 
 											</form> 
-										</td>';
+										</td>
 
-
+										<?php 
 									echo '</tr>';
 								}
 								echo '</table>';
