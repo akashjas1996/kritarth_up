@@ -23,7 +23,7 @@ function redirect($url)
     }
 }
 
-if(isset($_GET['url']=='admin')){
+if(isset($_GET['url']=='admin'){
 	redirect('../admin');
 }
 
