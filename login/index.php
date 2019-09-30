@@ -37,12 +37,7 @@ if(isset($_POST['login'])){
 			$row = mysqli_fetch_assoc($res);
 			$_SESSION['k_id'] = $row['kritarth_id'];
 			$_SESSION['name'] = $row['name'];
-			if(isset($_GET['url']=='admin'){
-				redirect('../admin');
-			}
-			else{
-				redirect('../participant/');	
-			}
+			redirect('../participant/');
 		}
 		else{
 					echo '<script type="text/javascript">';
