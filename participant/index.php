@@ -29,7 +29,7 @@ return $string;
 
 if(isset($_POST['remove_mobile'])){
 	$mb_kid = $_POST['mob_rem'];
-	$query_mbl_rem = "UPDATE khata SET contact=0 WHERE kritarth_id='$mb_kid'";
+	$query_mbl_rem = "UPDATE khata SET contact=0, mob_verified=0 WHERE kritarth_id='$mb_kid'";
 	$res_mbl_rem = mysqli_query($link, $query_mbl_rem);
 	echo '<script type="text/javascript">';
   		echo 'setTimeout(function () { swal("Removed!","Mobile Number Deleted.","success\");';
