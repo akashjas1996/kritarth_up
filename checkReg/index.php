@@ -5,6 +5,7 @@
 
 <?php
 include '../inc/dbconnection.php';
+
 function redirect($url)
 {
     if (!headers_sent())
@@ -122,7 +123,7 @@ table.blueTable tfoot .links a{
 					<div class="container">
 						<center> <h2 class="page-title">
 							<?php $kid =  $_SESSION['k_id'];
-							$event_id = $_POST['eid'];
+							$event_id = $_GET['eid'];
 							$query_ev = "SELECT * FROM pratispradha WHERE event_id='$event_id'";
 							$res_ev = mysqli_query($link, $query_ev);
 							$row_ev = mysqli_fetch_assoc($res_ev);
