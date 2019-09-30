@@ -157,8 +157,8 @@ table.blueTable tfoot .links a{
 									$res_std_details = mysqli_query($link, $query_std_details);
 									$row_std_details = mysqli_fetch_assoc($res_std_details);
 									echo '<tr>';
-									echo '<td>'.$count.'</td>'
-									$count++;
+									echo '<td>'.$count.'</td>';
+									$count=$count+1;
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
 									echo '<td>'.$row_std_details['name'].'</td>';
 									echo '<td>'.$row_std_details['email'].'</td>';
