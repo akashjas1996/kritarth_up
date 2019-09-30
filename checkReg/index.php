@@ -146,7 +146,7 @@ table.blueTable tfoot .links a{
 							<?php
 								$eid = $_POST['eid'];
 								$query_get_std = "SELECT * FROM pratispradha_chunao WHERE event_id='$eid'";
-								$echo $query_get_std;
+								echo $query_get_std;
 								$res_get_std = mysqli_query($link, $query_get_std);
 								while($row_get_std = mysqli_fetch_assoc($res_get_std)){
 									$current_kid = $row_get_std['kritarth_id'];
