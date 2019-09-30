@@ -166,7 +166,7 @@ table.blueTable tfoot .links a{
 											echo '<td>'.$row_std_details['kiit_roll'].'</td>';
 										}
 										else{
-											echo '<td><p>Pending</p></td>'
+											echo '<td><p>Pending</p></td>';
 										}
 									}
 									else{
