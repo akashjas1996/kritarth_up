@@ -142,6 +142,7 @@ table.blueTable tfoot .links a{
 								<th>Kritarth ID </th>
 								<th>Name</th>
 								<th>Email</th>
+								<th>Phone</th>
 								<th>Payment Status</th>
 								<th>Attendance</th>
 								</tr>
@@ -161,6 +162,7 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
 									echo '<td>'.$row_std_details['name'].'</td>';
 									echo '<td>'.$row_std_details['email'].'</td>';
+									echo '<td>'.$row_std_details['contact'].'</td>';
 									if($row_std_details['payment_status']==1){
 										$pay = "PAID";
 									}
