@@ -32,6 +32,85 @@ function redirect($url)
 	<head>
 
 		<style>
+
+			table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
+
+
 			table.blueTable {
   border: 1px solid #1C6EA4;
   background-color: #EEEEEE;
@@ -136,16 +215,16 @@ table.blueTable tfoot .links a{
 							<?php
 								$query_get_events = "SELECT * FROM pratispradha_mukhiya WHERE email='$email'";
 								$res_get_events = mysqli_query($link, $query_get_events); ?>
-								<table class="blueTable">
+								<table class="blueTable1">
+									<thead>
 									<tr>
 									<th>ID</th>
-									<th>ROLL</th>
-									<th>Name</th>
+									<th>Event Name</th>
 									<th>Schedule</th>
 									<th>Venue</th>
-									<th></th>
-									<th></th>
+									<th>Participants</th>
 									</tr>
+								</thead>
 								<?php
 								while($row_get_events = mysqli_fetch_assoc($res_get_events)){
 									echo '<tr>';
@@ -154,13 +233,13 @@ table.blueTable tfoot .links a{
 									$res_get_edit = mysqli_query($link, $query_get_edit);
 									$row_get_edit = mysqli_fetch_assoc($res_get_edit);
 									$eid=$row_get_edit['event_id'];
-									echo '<td>'.$row_get_edit['event_id'].'</td>';
+									echo '<td data-column="Event ID">'.$row_get_edit['event_id'].'</td>';
 									
-									echo '<td>'.$row_get_edit['event_name'].'</td>';
-									echo '<td>'.$row_get_edit['shedule'].'</td>';
-									echo '<td>'.$row_get_edit['venue'].'</td>';
+									echo '<td data-column="Event Name">'.$row_get_edit['event_name'].'</td>';
+									echo '<td data-column="Schedule">'.$row_get_edit['shedule'].'</td>';
+									echo '<td data-column="Venue">'.$row_get_edit['venue'].'</td>';
 									?>
-									<td> <form method="POST" action="../checkReg/index.php" > 
+									<td data-column="Participants"> <form method="POST" action="../checkReg/index.php" > 
 											<input type="hidden" name="eid" value="<?php echo $eid ?>"> 
 											<input type="submit" value="Participants"> 
 											</form> 
