@@ -122,8 +122,8 @@ table.blueTable tfoot .links a{
 					<div class="container">
 						<center> <h2 class="page-title">Welcome 
 							<?php 
-							if(!isset($_SESSION['k_id']){
-								redirect('../login/index.php?url="admin"')
+							if(!isset($_SESSION['k_id'])){
+								redirect('../login/index.php?url=admin');
 							}
 							$kid =  $_SESSION['k_id'];
 							$query_get_email = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
