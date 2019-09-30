@@ -140,6 +140,7 @@ table.blueTable tfoot .links a{
 								<tr>
 								<th>Sl.</th>
 								<th>Kritarth ID </th>
+								<th>Roll No</th>
 								<th>Name</th>
 								<th>Email</th>
 								<th>Phone</th>
@@ -160,6 +161,12 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$count.'</td>';
 									$count=$count+1;
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
+									if($row_get_edit['kiit_roll']>0){
+										echo '<td>'.$row_get_edit['kiit_roll'].'</td>';
+									}
+									else{
+										echo '<td><p>Other Institute</p></td>';
+									}
 									echo '<td>'.$row_std_details['name'].'</td>';
 									echo '<td>'.$row_std_details['email'].'</td>';
 									echo '<td>'.$row_std_details['contact'].'</td>';
