@@ -21,13 +21,21 @@ function redirect($url)
         echo '</noscript>'; exit;
     }
 }
-
 function nl2br2($string) {
 $string = str_replace(array("\r\n", "\r", "\n"), "</li><li>", $string);
 $string = substr($string,0,strlen($string)-2);
 return $string;
 }
 
+if(isset($_POST['remove_mobile'])){
+	$mb_kid = $_POST['mob_rem'];
+	$query_mbl_rem = "UPDATE khata SET contact=0 WHERE kritarth_id='$mb_kid'";
+	$res_mbl_rem = mysqli_query($link, $query_mbl_rem);
+	echo '<script type="text/javascript">';
+  		echo 'setTimeout(function () { swal("Removed!","Mobile Number Deleted.","success\");';
+  		echo '}, 1000);
+  		</script>';
+}
 
 if(isset($_POST['mobile_verify'])){
 	$kid = $_POST['kid_otp'];
@@ -363,6 +371,20 @@ if(isset($_POST['participation_removal_pressed'])){
 
 						</h2>
 						<p> Your Kritarth ID is : <?php echo $_SESSION['k_id'] ?> </p>
+						<?php 
+						$kid = $_SESSION['k_id'];
+						$query_mobile_change = "SELECT contact FROM khata WHERE kritarth_id='$kid'";
+						$res_mobile_change = mysqli_query($link, $query_mobile_change);
+						$row_mobile_change = mysqli_fetch_assoc($res_mobile_change);
+						$mob = $row_mobile_change['contact'];
+						if($mob>0){
+							echo '<form action="" method="POST">
+						 	Your mobile no. is: '.$mob.'
+						 	<input type="hidden" value="'.$kid.'" name="mob_rem">
+						 	<input style="display: inline" type="submit" value="Change" name="remove_mobile">
+						 </form>';
+						}
+						 ?>
 						<p> Note that FIRST YEAR B.TECH students won't be allowed for the event and star night. </p>
 						<div class="container">
 							<div class="row">
