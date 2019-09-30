@@ -33,6 +33,86 @@ function redirect($url)
 	<head>
 
 		<style>
+
+
+						table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
+
+
 			table.blueTable {
   border: 1px solid #1C6EA4;
   background-color: #EEEEEE;
@@ -136,7 +216,8 @@ table.blueTable tfoot .links a{
 						  ?></h2> </center>
 						  <?php $count=1; ?>
 						<div class="row">
-							<table class="blueTable">
+							<table>
+								<thead>
 								<tr>
 								<th>Sl.</th>
 								<th>Kritarth ID </th>
@@ -147,6 +228,7 @@ table.blueTable tfoot .links a{
 								<th>Payment Status</th>
 								<th>Attendance</th>
 								</tr>
+							</thead>
 
 							<?php
 								
@@ -158,12 +240,12 @@ table.blueTable tfoot .links a{
 									$res_std_details = mysqli_query($link, $query_std_details);
 									$row_std_details = mysqli_fetch_assoc($res_std_details);
 									echo '<tr>';
-									echo '<td>'.$count.'</td>';
+									echo '<td data-column="Sl">'.$count.'</td>';
 									$count=$count+1;
-									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
+									echo '<td data-column="Kritarth ID">'.$row_std_details['kritarth_id'].'</td>';
 									if($row_std_details['institute']=='KIIT'){
 										if($row_std_details['kiit_roll']>0){
-											echo '<td>'.$row_std_details['kiit_roll'].'</td>';
+											echo '<td data-column="Roll">'.$row_std_details['kiit_roll'].'</td>';
 										}
 										else{
 											echo '<td><p>Pending</p></td>';
@@ -172,17 +254,17 @@ table.blueTable tfoot .links a{
 									else{
 										echo '<td><p>Other Institute</p></td>';
 									}
-									echo '<td>'.$row_std_details['name'].'</td>';
-									echo '<td>'.$row_std_details['email'].'</td>';
-									echo '<td>'.$row_std_details['contact'].'</td>';
+									echo '<td data-column="Name" >'.$row_std_details['name'].'</td>';
+									echo '<td data-column="email" >'.$row_std_details['email'].'</td>';
+									echo '<td data-column="Phone">'.$row_std_details['contact'].'</td>';
 									if($row_std_details['payment_status']==1){
 										$pay = "PAID";
 									}
 									else{
 										$pay = "NOT PAID";
 									}
-									echo '<td>'.$pay.'</td>'; ?>
-									<td> <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
+									echo '<td data-column="Payment">'.$pay.'</td>'; ?>
+									<td data-column="Attendance" > <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
 									<option disabled selected="selected" >
 										<?php
 										$kid = $row_std_details['kritarth_id'];
