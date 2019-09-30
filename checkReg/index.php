@@ -162,7 +162,12 @@ table.blueTable tfoot .links a{
 									$count=$count+1;
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
 									if($row_std_details['institute']=='KIIT'){
-										echo '<td>'.$row_std_details['kiit_roll'].'</td>';
+										if($row_std_details['kiit_roll']>0){
+											echo '<td>'.$row_std_details['kiit_roll'].'</td>';
+										}
+										else{
+											echo '<td><p>Pending</p></td>'
+										}
 									}
 									else{
 										echo '<td><p>Other Institute</p></td>';
