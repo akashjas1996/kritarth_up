@@ -154,8 +154,7 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_get_edit['shedule'].'</td>';
 									echo '<td>'.$row_get_edit['venue'].'</td>';
 									?>
-									<?php var_dump($_POST); ?>
-									<td> <form method="POST" action="../checkReg" > 
+									<td> <form method="POST" action="../checkReg/index.php" > 
 											<input type="hidden" name="eid" value="<?php echo $eid ?>"> 
 											<input type="submit" value="Participants"> 
 											</form> 
