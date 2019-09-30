@@ -1,4 +1,6 @@
-<?php include '../inc/dbconnection.php'; ?>
+<?php
+session_start();
+include '../inc/dbconnection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
