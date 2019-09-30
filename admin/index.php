@@ -121,7 +121,11 @@ table.blueTable tfoot .links a{
 				<div class="fullwidth-block inner-content">
 					<div class="container">
 						<center> <h2 class="page-title">Welcome 
-							<?php $kid =  $_SESSION['k_id'];
+							<?php 
+							if(!isset($_SESSION['k_id']){
+								redirect('../login/index.php?url="admin"')
+							}
+							$kid =  $_SESSION['k_id'];
 							$query_get_email = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
 							$res_get_email = mysqli_query($link, $query_get_email);
 							$row_get_email = mysqli_fetch_assoc($res_get_email);
