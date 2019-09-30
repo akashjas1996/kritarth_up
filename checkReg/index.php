@@ -228,7 +228,7 @@ table.blueTable tfoot .links a{
                 console.log(eventid);
                 console.log(ob.value);
                 $.ajax({
-                    url: "checkReg/fetch_att.php",
+                    url: "fetch_att.php",
                     method: "POST",
                     data: {
                         kid: kid,
