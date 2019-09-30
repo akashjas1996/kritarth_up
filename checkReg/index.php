@@ -134,9 +134,11 @@ table.blueTable tfoot .links a{
 							// $email = $row_get_email['email'];
 							// echo $row_get_email['name']." !";
 						  ?></h2> </center>
+						  <?php $count=0; ?>
 						<div class="row">
 							<table class="blueTable">
 								<tr>
+								<th>Sl.</th>
 								<th>Kritarth ID </th>
 								<th>Name</th>
 								<th>Email</th>
@@ -154,6 +156,8 @@ table.blueTable tfoot .links a{
 									$res_std_details = mysqli_query($link, $query_std_details);
 									$row_std_details = mysqli_fetch_assoc($res_std_details);
 									echo '<tr>';
+									echo '<td>'.$count.'</td>'
+									$count++;
 									echo '<td>'.$row_std_details['kritarth_id'].'</td>';
 									echo '<td>'.$row_std_details['name'].'</td>';
 									echo '<td>'.$row_std_details['email'].'</td>';
