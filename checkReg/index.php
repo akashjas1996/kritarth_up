@@ -96,7 +96,7 @@ table.blueTable tfoot .links a{
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<title> Login| Kritarth.org</title>
+		<title> Registrations| Kritarth.org</title>
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -147,7 +147,6 @@ table.blueTable tfoot .links a{
 							<?php
 								
 								$query_get_std = "SELECT * FROM pratispradha_chunao WHERE event_id='$event_id'";
-								echo $query_get_std;
 								$res_get_std = mysqli_query($link, $query_get_std);
 								while($row_get_std = mysqli_fetch_assoc($res_get_std)){
 									$current_kid = $row_get_std['kritarth_id'];
