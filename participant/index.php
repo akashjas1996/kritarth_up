@@ -78,7 +78,7 @@ $curl = curl_init();
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?email=kritarthwebsite@gmail.com&template=hello&otp=".$otp."&otp_length=4&otp_expiry=10&sender=KRTRTH&message=".$otp." is the mobile Verification code for KRITARTH 5.0.&mobile=".$mbl."&authkey=296366AFcEP9oki5d8fad56",
+  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?template=hello&otp=".$otp."&otp_length=4&otp_expiry=10&sender=KRTRTH&message=".$otp." is the mobile Verification code for KRITARTH 5.0.&mobile=".$mbl."&authkey=296366AFcEP9oki5d8fad56",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
