@@ -140,7 +140,7 @@ table.blueTable tfoot .links a{
 									<tr>
 									<th>ID</th>
 									<th>Name</th>
-									<th>Shedule</th>
+									<th>Schedule</th>
 									<th>Venue</th>
 									<th></th>
 									<th></th>
