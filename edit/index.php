@@ -129,7 +129,7 @@ if(isset($_POST['edit_event_info_button'])){
 								 	<input name="e_name" style="font-size: 50px" type="text" value="<?php echo $row_get_event_info['event_name'] ?>">
 								<h1>  </h1>
 								<br>
-								<h2>Venue and Shedule</h2>
+								<h2>Venue and Schedule</h2>
 								Venue :  &nbsp; <input name="e_venue" type="text" value="<?php echo $row_get_event_info['venue']?>"> <br>
 								<br>
 								Date : &nbsp; &nbsp; &nbsp; <input name="e_date" type="date" value = "<?php $dt = $row_get_event_info['d_date']; echo $dt ?>">
