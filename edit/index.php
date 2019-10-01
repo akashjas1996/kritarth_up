@@ -61,19 +61,19 @@ if(isset($_POST['edit_event_info_button'])){
 	// echo $erules;
 	// echo $eeid;
 
-	// $qr = "UPDATE pratispradha SET event_name='$ename', d_date='$edate', t_time='$etime', venue='$evenue', first_prize='$efprize', second_prize='$esprize', third_prize='$etprize', short_description='$eabout', long_description='$erules' WHERE event_id='$eeid'";
-	//  // echo $qr;
+	$qr = "UPDATE pratispradha SET event_name='$ename', d_date='$edate', t_time='$etime', venue='$evenue', first_prize='$efprize', second_prize='$esprize', third_prize='$etprize', short_description='$eabout', long_description='$erules' WHERE event_id='$eeid'";
+	 // echo $qr;
 
-	// $res_qr = mysqli_query($link, $qr);
-	// echo mysqli_error($link);
+	$res_qr = mysqli_query($link, $qr);
+	echo mysqli_error($link);
 	// redirect('../admin/');
 
 
 
-	$stmt_update_event = $link->prepare("UPDATE pratispradha SET event_name=? d_date=? t_time=? venue=? first_prize=? second_prize=? third_prize=? short_description=? long_description=? WHERE event_id=?");
-	$stmt_update_event->bind_param("sssssssssi", $ename, $edate, $etime, $evenue, $efprize, $esprize, $etprize, $eabout, $erules, $eeid);
-	 echo mysqli_error($link);
-	$stmt_update_event->execute();
+	// $stmt_update_event = $link->prepare("UPDATE pratispradha SET event_name=? d_date=? t_time=? venue=? first_prize=? second_prize=? third_prize=? short_description=? long_description=? WHERE event_id=?");
+	// $stmt_update_event->bind_param("sssssssssi", $ename, $edate, $etime, $evenue, $efprize, $esprize, $etprize, $eabout, $erules, $eeid);
+	//  echo mysqli_error($link);
+	// $stmt_update_event->execute();
 }
 ?>
 
