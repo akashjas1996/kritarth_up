@@ -29,8 +29,12 @@ return $string;
 
 if(isset($_POST['remove_mobile'])){
 	$mb_kid = $_POST['mob_rem'];
-	$query_mbl_rem = "UPDATE khata SET contact=0, mob_verified=0 WHERE kritarth_id='$mb_kid'";
-	$res_mbl_rem = mysqli_query($link, $query_mbl_rem);
+	$zero=0;
+	$stmt_mbl_rem = $link->prepare("UPDATE khata SET contact=?, mob_verified=? WHERE kritarth_id=?");
+	$stmt_mbl_rem->bind_param('ssi',$zero, $zero, $mb_kid);
+	$stmt_mbl_rem->execute();
+
+
 	echo '<script type="text/javascript">';
   		echo 'setTimeout(function () { swal("Removed!","Mobile Number Deleted.","success\");';
   		echo '}, 1000);
@@ -44,8 +48,13 @@ if(isset($_POST['mobile_verify'])){
 	$res_vr = mysqli_query($link, $query_vr);
 	$row_vr = mysqli_fetch_assoc($res_vr);
 	if($row_vr['mob_otp']==$enteredOtp){
-		$query_mark = "UPDATE khata SET mob_verified=1 , mob_otp=1947 WHERE kritarth_id='$kid'";
-		$res_mark = mysqli_query($link, $query_mark);
+		
+		$one = 1;
+		$dflt = 1947;
+
+		$stmt_mark = $link->prepare("UPDATE khata SET mob_verified=?, mob_otp=? WHERE kritarth_id=?");
+		$stmt_mark->bind_param("ssi", $one, $dflt, $kid);
+		$stmt_mark->execute();
 		echo '<script type="text/javascript">';
   		echo 'setTimeout(function () { swal("Thanks!","Mobile Number Verified.","success");';
   		echo '}, 1000);
@@ -109,20 +118,24 @@ if ($err) {
 
 if(isset($_POST['phone_save'])){
 	$kid = $_POST['kid'];
-	// echo $kid;
 	$phone_no = $_POST['cont_no'];
-	$query_update_phone = "UPDATE khata SET contact='$phone_no' WHERE kritarth_id='$kid'";
-	$res_update_phone = mysqli_query($link, $query_update_phone);
-	echo mysqli_error($link);
+
+	$stmt_update_phone = $link->prepare("UPDATE khata SET contact=? WHERE kritarth_id=?");
+	$stmt_update_phone->bind_param("si",$phone_no,$kid);
+	$stmt_update_phone->execute();
+
+	// $query_update_phone = "UPDATE khata SET contact='$phone_no' WHERE kritarth_id='$kid'";
+	// $res_update_phone = mysqli_query($link, $query_update_phone);
+	// echo mysqli_error($link);
 }
 
 if(isset($_POST['roll_save'])){
 	$kid = $_POST['kid_roll'];
-	// echo $kid;
 	$roll_no = $_POST['rollNo'];
-	$query_update_phone = "UPDATE khata SET kiit_roll='$roll_no' WHERE kritarth_id='$kid'";
-	//echo $query_update_phone;
-	$res_update_phone = mysqli_query($link, $query_update_phone);
+
+	$stmt_update_roll = $link->prepare("UPDATE khata SET kiit_roll=? WHERE kritarth_id=?");
+	$stmt_update_roll->bind_param("si",$roll_no,$kid);
+	$stmt_update_roll->execute();
 }
 
 

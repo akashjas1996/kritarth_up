@@ -5,6 +5,7 @@
 
 <?php
 include '../inc/dbconnection.php';
+
 function redirect($url)
 {
     if (!headers_sent())
@@ -33,7 +34,8 @@ function redirect($url)
 
 		<style>
 
-			table { 
+
+						table { 
 	width: 750px; 
 	border-collapse: collapse; 
 	margin:50px auto;
@@ -174,7 +176,7 @@ table.blueTable tfoot .links a{
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<title> Login| Kritarth.org</title>
+		<title> Registrations| Kritarth.org</title>
 		<!-- Loading third party fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
 		<link href="../fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -199,67 +201,87 @@ table.blueTable tfoot .links a{
 			<main class="main-content">
 				<div class="fullwidth-block inner-content">
 					<div class="container">
-						<center> <h2 class="page-title">Welcome 
-							<?php 
-							if(!isset($_SESSION['k_id'])){
-								redirect('../login/index.php?url=admin');
-							}
-							$kid =  $_SESSION['k_id'];
-							$query_get_email = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
-							$res_get_email = mysqli_query($link, $query_get_email);
-							$row_get_email = mysqli_fetch_assoc($res_get_email);
-							$email = $row_get_email['email'];
-							echo $row_get_email['name']." !";
+						<center> <h2 class="page-title">
+							<?php $kid =  $_SESSION['k_id'];
+							$event_id = $_POST['eid'];
+							$query_ev = "SELECT * FROM pratispradha WHERE event_id='$event_id'";
+							$res_ev = mysqli_query($link, $query_ev);
+							$row_ev = mysqli_fetch_assoc($res_ev);
+							echo $row_ev['event_name'];
+							// $query_get_email = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
+							// $res_get_email = mysqli_query($link, $query_get_email);
+							// $row_get_email = mysqli_fetch_assoc($res_get_email);
+							// $email = $row_get_email['email'];
+							// echo $row_get_email['name']." !";
 						  ?></h2> </center>
+						  <?php $count=1; ?>
 						<div class="row">
+							<table>
+								<thead>
+								<tr>
+								<th>Sl.</th>
+								<th>Kritarth ID </th>
+								<th>Roll No</th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Phone</th>
+								<th>Payment Status</th>
+								<th>Attendance</th>
+								</tr>
+							</thead>
+
 							<?php
-								$query_get_events = "SELECT * FROM pratispradha_mukhiya WHERE email='$email'";
-								$res_get_events = mysqli_query($link, $query_get_events); ?>
-								<table class="blueTable1">
-									<thead>
-									<tr>
-									<th>ID</th>
-									<th>Event Name</th>
-									<th>Schedule</th>
-									<th>Venue</th>
-									<th>EDIT</th>
-									<th>Participants</th>
-									</tr>
-								</thead>
-								<?php
-								while($row_get_events = mysqli_fetch_assoc($res_get_events)){
+								
+								$query_get_std = "SELECT * FROM pratispradha_chunao WHERE event_id='$event_id'";
+								$res_get_std = mysqli_query($link, $query_get_std);
+								while($row_get_std = mysqli_fetch_assoc($res_get_std)){
+									$current_kid = $row_get_std['kritarth_id'];
+									$query_std_details = "SELECT * FROM khata WHERE kritarth_id='$current_kid'";
+									$res_std_details = mysqli_query($link, $query_std_details);
+									$row_std_details = mysqli_fetch_assoc($res_std_details);
 									echo '<tr>';
-									$current_event =  $row_get_events['pratispradha_id'];
-									$query_get_edit = "SELECT * FROM pratispradha WHERE event_id = '$current_event'";
-									$res_get_edit = mysqli_query($link, $query_get_edit);
-									$row_get_edit = mysqli_fetch_assoc($res_get_edit);
-									$eid=$row_get_edit['event_id'];
-									echo '<td data-column="Event ID">'.$row_get_edit['event_id'].'</td>';
-									
-									echo '<td data-column="Event Name">'.$row_get_edit['event_name'].'</td>';
-									echo '<td data-column="Schedule">'.$row_get_edit['shedule'].'</td>';
-									echo '<td data-column="Venue">'.$row_get_edit['venue'].'</td>';
-									?>
-
-
-									<td data-column="Participants"> <form method="POST" action="../edit/index.php" > 
-											<input type="hidden" name="edit_event_id" value="<?php echo $eid ?>"> 
-											<input type="submit" value="EDIT"> 
-											</form> 
-										</td>
-
-
-									<td data-column="Participants"> <form method="POST" action="../checkReg/index.php" > 
-											<input type="hidden" name="eid" value="<?php echo $eid ?>"> 
-											<input type="submit" value="Participants"> 
-											</form> 
-										</td>
-
-										<?php 
-									echo '</tr>';
+									echo '<td data-column="Sl">'.$count.'</td>';
+									$count=$count+1;
+									echo '<td data-column="Kritarth ID">'.$row_std_details['kritarth_id'].'</td>';
+									if($row_std_details['institute']=='KIIT'){
+										if($row_std_details['kiit_roll']>0){
+											echo '<td data-column="Roll">'.$row_std_details['kiit_roll'].'</td>';
+										}
+										else{
+											echo '<td><p>Pending</p></td>';
+										}
+									}
+									else{
+										echo '<td><p>Other Institute</p></td>';
+									}
+									echo '<td data-column="Name" >'.$row_std_details['name'].'</td>';
+									echo '<td data-column="email" >'.$row_std_details['email'].'</td>';
+									echo '<td data-column="Phone">'.$row_std_details['contact'].'</td>';
+									if($row_std_details['payment_status']==1){
+										$pay = "PAID";
+									}
+									else{
+										$pay = "NOT PAID";
+									}
+									echo '<td data-column="Payment">'.$pay.'</td>'; ?>
+									<td data-column="Attendance" > <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
+									<option disabled selected="selected" >
+										<?php
+										$kid = $row_std_details['kritarth_id'];
+										$eid = $_POST['eid'];
+											$query_check_att = "SELECT * FROM pratispradha_chunao WHERE kritarth_id='$kid' AND event_id='$eid'";
+											$res_check_att = mysqli_query($link, $query_check_att);
+											$row_check_att = mysqli_fetch_assoc($res_check_att);
+											echo $row_check_att['status'];
+										?>
+									</option>
+										<option>PRESENT</option>
+										<option>ABSENT</option>
+									</select></td>
+									<?php echo '</tr>';
 								}
-								echo '</table>';
-							 ?>
+								?>
+							</table>
 						</div>
 					</div>
 				</div> <!-- .testimonial-section -->
@@ -287,7 +309,33 @@ table.blueTable tfoot .links a{
 				document.getElementById('fee_store').value="150";}
 			}
 		</script>
-		
-	</body>
+		<script type="text/javascript">
+			// function mark_attendance(a,b){
+			// 	console.log(a);
+			// 	console.log(b);
+			// }
 
+			function mark_attendance(kid,eventid,ob) {
+               // alert(status);
+                //alert(empid)
+                console.log(kid);
+                console.log(eventid);
+                console.log(ob.value);
+                $.ajax({
+                    url: "fetch_att.php",
+                    method: "POST",
+                    data: {
+                        kid: kid,
+                        eventid: eventid,
+                        status:ob.value,
+                    },
+                    success: function(data) {
+                      //  $('#result').html(data);
+                    }
+                });
+            }
+
+
+		</script>
+	</body>
 </html>
