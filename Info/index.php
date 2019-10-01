@@ -78,7 +78,7 @@ return $string;
 							<div class="col-lg-9">
 								<h1> <?php echo $row_abt_event['event_name'] ?> </h1>
 								<br>
-								<h2>Venue and Shedule</h2>
+								<h2>Venue and Schedule</h2>
 								<?php echo $row_abt_event['venue'] ?> <br>
 								<?php echo $row_abt_event['shedule'] ?>
 							</div>
