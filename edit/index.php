@@ -130,8 +130,9 @@ if(isset($_POST['edit_event_info_button'])){
 								<h2>Venue and Shedule</h2>
 								Venue :  &nbsp; <input name="e_venue" type="text" value="<?php echo $row_get_event_info['venue']?>"> <br>
 								<br>
-								Date : &nbsp; &nbsp; &nbsp; <input name="e_date" type="date" value = "<?php echo '2019-10-02'?>">
-								&nbsp; &nbsp; &nbsp;Time : <input name="e_time_set" type="time" value="<?php echo '20:12'?>">
+								Date : &nbsp; &nbsp; &nbsp; <input name="e_date" type="date" value = "<?php $dt = $row_get_event_info['d_date']; echo $dt ?>">
+								&nbsp; &nbsp; &nbsp;Time : <input name="e_time_set" type="time" value="<?php $tm=$row_get_event_info['t_time'];
+								 echo $tm; ?>">
 							</div>
 							<div class="col-lg-3">
 								<img style="margin-top: 25px; width: 200px" src="../../images/<?php echo $row_get_event_info['event_image']?>">
