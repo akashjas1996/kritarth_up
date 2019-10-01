@@ -31,15 +31,34 @@ return $string;
 
 
 if(isset($_POST['edit_event_info_button'])){
-	echo $_POST['e_name'];
-	echo $_POST['e_date'];
-	echo $_POST['e_time_set'];
-	echo $_POST['e_venue'];
-	echo $_POST['f_prize'];
-	echo $_POST['s_prize'];
-	echo $_POST['t_prize'];
-	echo $_POST['e_about'];
-	echo $_POST['e_rules'];
+	$ename =  $_POST['e_name'];
+	$edate =  $_POST['e_date'];
+	$etime =  $_POST['e_time_set'];
+	$evenue =  $_POST['e_venue'];
+	$efprize =  $_POST['f_prize'];
+	$esprize =  $_POST['s_prize'];
+	$etprize =  $_POST['t_prize'];
+	$eabout =  $_POST['e_about'];
+	$erules =  $_POST['e_rules'];
+	$eeid =  $_POST['get_event_id'];
+
+	echo $ename;
+	echo $edate ;
+	echo $etime;
+	echo $evenue;
+	echo $efprize;
+	echo $esprize;
+	echo $etprize;
+	echo $eabout;
+	echo $erules;
+	echo $eeid;
+
+	// $query_upd = "INSERT INTO pratispradha(event_name, d_date, t_time, ) "
+	// $qr = UPDATE pratispradha SET event_name=?
+	$stmt_update_event = $link->prepare("UPDATE pratispradha SET event_name=? d_date=? t_time=? venue=? first_prize=? second_prize=? third_prize=? short_description=? long_description=? WHERE event_id=?");
+	$stmt_update_event->bind_param("ssssiiissi", $ename, $edate, $etime, $evenue, $efprize, $esprize, $etprize, $eabout, $erules, $eeid);
+	 print_r(mysqli_error_list($link));
+	$stmt_update_event->execute();
 }
 ?>
 
@@ -59,7 +78,6 @@ if(isset($_POST['edit_event_info_button'])){
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="../style/style.css">
 		<link rel="shortcut icon" href="../images/favicon.png">
-		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
 		<script src="js/ie-support/respond.js"></script>
@@ -116,8 +134,8 @@ if(isset($_POST['edit_event_info_button'])){
 								<h2>About</h2>
 								<textarea name="e_about"  style="width: 100%;height: 100px"> <?php echo $row_get_event_info['short_description'];?> </textarea>
 								<h2>Rules and Regulations </h2>
-								<textarea name="e_rules" style="width: 100%; height: 20em"><?php echo $row_get_event_info['long_description']; ?>"</textarea> <br><br>
-								<input get_event_id="" value="" type="hidden">
+								<textarea name="e_rules" style="width: 100%; height: 20em"><?php echo $row_get_event_info['long_description']; ?></textarea> <br><br>
+								<input name="get_event_id" value="<?php echo $edit_event ?>" type="hidden">
 								<input type="submit" name="edit_event_info_button" value="UPDATE">
 							</form>
 
