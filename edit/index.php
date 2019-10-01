@@ -39,6 +39,7 @@ if(isset($_POST['edit_event_info_button'])){
 	$esprize =  $_POST['s_prize'];
 	$etprize =  $_POST['t_prize'];
 
+
 	// $efprize =  0;
 	// $esprize =  0;
 	// $etprize =  0;
@@ -47,6 +48,7 @@ if(isset($_POST['edit_event_info_button'])){
 	$eabout =  $_POST['e_about'];
 	$erules =  $_POST['e_rules'];
 	$eeid =  $_POST['get_event_id'];
+	$_POST['edit_event_id']=$eeid;
 
 	// echo $ename;
 	// echo $edate ;
@@ -64,7 +66,7 @@ if(isset($_POST['edit_event_info_button'])){
 
 	$res_qr = mysqli_query($link, $qr);
 	echo mysqli_error($link);
-	redirect('../admin/');
+	// redirect('../admin/');
 
 
 
