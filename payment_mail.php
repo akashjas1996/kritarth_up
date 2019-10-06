@@ -3,6 +3,24 @@ session_start();
 include 'inc/dbconnection.php';
  ob_start();
  require_once 'vendor/autoload.php';
+
+ function redirect($url)
+{
+    if (!headers_sent())
+    {    
+        header('Location: '.$url);
+        exit;
+        }
+    else
+        {  
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$url.'";';
+        echo '</script>';
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+        echo '</noscript>'; exit;
+    }
+}
  
  if(1)
  {
@@ -156,6 +174,9 @@ EOF;
           $current_email = $row['email'];
           $query_mail = "UPDATE khata SET mail_1=1 WHERE email='$current_email'";
           $res_mail = mysqli_query($link, $query_mail); 
+          if($count==10){
+            redirect('https://kritarth.org/payment_mail.php');
+          }
       }
       else
       {
