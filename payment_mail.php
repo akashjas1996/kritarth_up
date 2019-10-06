@@ -2,9 +2,6 @@
 session_start();
 include 'inc/dbconnection.php';
  ob_start();
-
-
- 
  require_once 'vendor/autoload.php';
  
  if(1)
