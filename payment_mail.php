@@ -6,7 +6,7 @@ include 'inc/dbconnection.php';
  
  if(1)
  {
-     $selQuery="SELECT * FROM khata WHERE payment_status=0";
+     $selQuery="SELECT * FROM khata WHERE payment_status=0 AND mail_1=0";
      $res = mysqli_query($link,$selQuery);
      while($row =  mysqli_fetch_assoc($res)){
      	$email = $row['email'];
