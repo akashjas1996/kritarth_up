@@ -1,5 +1,6 @@
 <?php
 session_start();
+$count=0;
 include 'inc/dbconnection.php';
  ob_start();
  require_once 'vendor/autoload.php';
@@ -174,6 +175,7 @@ EOF;
           $current_email = $row['email'];
           $query_mail = "UPDATE khata SET mail_1=1 WHERE email='$current_email'";
           $res_mail = mysqli_query($link, $query_mail); 
+          $count=$count+1;
           if($count==10){
             redirect('https://kritarth.org/payment_mail.php');
           }
