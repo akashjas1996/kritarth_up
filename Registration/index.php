@@ -70,8 +70,8 @@ echo mysqli_error($link);
   		echo 'setTimeout(function () { swal("WOW!","Registered Successfully !","success");';
   		echo '}, 1000);
   		</script>';
-  		header( "refresh:2;url=../reg_mail.php?email=$email" );
-  		//redirect('../reg_mail.php?email='.$email);
+  		// header( "refresh:2;url=../reg_mail.php?email=$email" );
+  		redirect('../reg_mail.php?email='.$email);
 		}
 	}
 	else{
