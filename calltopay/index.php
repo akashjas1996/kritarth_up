@@ -203,10 +203,13 @@ table.blueTable tfoot .links a{
 					<div class="container">
 						<center> <h2 class="page-title">
 							<?php $kid =  $_SESSION['k_id'];
-							// $query_get_email = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
-							// $res_get_email = mysqli_query($link, $query_get_email);
-							// $row_get_email = mysqli_fetch_assoc($res_get_email);
-							// $email = $row_get_email['email'];
+							 $query_get_verify = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
+							 $res_get_verify = mysqli_query($link, $query_get_verify);
+							 $row_get_verify = mysqli_fetch_assoc($res_get_verify);
+							 $role = $row_get_email['role'];
+							 if($role!=3){
+							 	redirect('https://kritarth.org/participation');
+							 }
 							// echo $row_get_email['name']." !";
 						  ?></h2> </center>
 						  <?php $count=1; ?>
