@@ -229,11 +229,13 @@ table.blueTable tfoot .links a{
 								$res_unpaid = mysqli_query($link, $query_unpaid);
 								while($row_unpaid=mysqli_fetch_assoc($res_unpaid)){
 									echo '<tr>';
+									echo '<td></td>';
 									echo '<td>'.$row_unpaid["kritarth_id"].'</td>';
 									echo '<td>'.$row_unpaid["kiit_roll"].'</td>';
 									echo '<td>'.$row_unpaid["name"].'</td>';
 									echo '<td>'.$row_unpaid["email"].'</td>';
-									echo '<td>'.$row_unpaid["phone"].'</td>';
+									echo '<td>'.$row_unpaid["contact"].'</td>';
+									echo '<td>'.$row_unpaid["payment_status"].'</td>';
 									echo '</tr>';
 								}
 							?>
