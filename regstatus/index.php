@@ -225,7 +225,7 @@ table.blueTable tfoot .links a{
 							<?php
 							$count_paid = "SELECT * FROM khata WHERE payment_status=1;";
 							$res_paid = mysqli_query($link, $count_paid);
-							$row_paid = mysqli_num_rows($count_paid);
+							$row_paid = mysqli_num_rows($res_paid);
 							?>
 							</h3><?php echo $row_paid; ?></div>
 						</div>
