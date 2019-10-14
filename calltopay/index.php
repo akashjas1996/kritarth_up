@@ -208,9 +208,9 @@ table.blueTable tfoot .links a{
 							 $row_get_verify = mysqli_fetch_assoc($res_get_verify);
 							 $role = $row_get_email['role'];
 							 echo $role;
-							 if($role!=3){
-							 	redirect('https://kritarth.org/participant');
-							 }
+							 // if($role!=3){
+							 // 	redirect('https://kritarth.org/participant');
+							 // }
 							// echo $row_get_email['name']." !";
 						  ?></h2> </center>
 						  <?php $count=1; ?>
