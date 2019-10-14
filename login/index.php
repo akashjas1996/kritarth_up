@@ -42,6 +42,13 @@ if(isset($_POST['login'])){
 				if($_GET['url']=='admin'){
 				redirect('../admin');
 				}
+				if($_GET['url']=='regstatus'){
+					redirect('../regstatus');
+				}
+				if($_GET['url']=='calltopay'){
+					redirect('../calltopay');
+				}
+
 			}
 			else{
 				redirect('../participant/');

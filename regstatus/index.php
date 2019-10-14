@@ -209,7 +209,7 @@ table.blueTable tfoot .links a{
 							 $role = $row_get_verify['role'];
 							 // echo $role;
 							 if($role!=2){
-							 	redirect('https://kritarth.org/participant');
+								redirect('../login/index.php?url=regstatus');
 							 }
 							// echo $row_get_email['name']." !";
 						  ?></h2> 
