@@ -80,7 +80,7 @@ return $string;
 								<br>
 								<h2>Venue and Schedule</h2>
 								<?php echo $row_abt_event['venue'] ?> <br>
-								<?php echo $row_abt_event['shedule'] ?>
+								<?php echo $row_abt_event['d_date'] ?> &nbsp; <?php echo $row_abt_event['t_time'] ?>
 							</div>
 							<div class="col-lg-3">
 								<img style="margin-top: 25px; width: 200px" src="../../images/<?php echo $row_abt_event['event_image']?>">
