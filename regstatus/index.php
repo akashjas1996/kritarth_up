@@ -212,13 +212,24 @@ table.blueTable tfoot .links a{
 							 	redirect('https://kritarth.org/participant');
 							 }
 							// echo $row_get_email['name']." !";
-						  ?></h2> </center>
+						  ?></h2> 
 						<div class="row">
 							<h1>Total Registrations</h1>
-							<h3>8734</h3>
+							<?php
+							$count_all = "SELECT * FROM khata;";
+							$res_all = mysqli_query($link, $count_all);
+							$row_all = mysqli_num_rows($res_all);
+							 ?>
+							<h3><?php echo $row_all; ?></h3>
 							<h1>Paid Registrations</h1>
-							</h3>7843</div>
+							<?php
+							$count_paid = "SELECT * FROM khata WHERE payment_status=1;";
+							$res_paid = mysqli_query($link, $count_paid);
+							$row_paid = mysqli_num_rows($count_paid);
+							?>
+							</h3><?php echo $row_paid; ?></div>
 						</div>
+						</center>
 					</div>
 				</div> <!-- .testimonial-section -->
 
