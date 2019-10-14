@@ -239,7 +239,7 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_unpaid["name"].'</td>';
 									echo '<td>'.$row_unpaid["email"].'</td>';
 									echo '<td><a href="tel:'.$row_unpaid["contact"].'">'.$row_unpaid["contact"].'</a></td>';
-									echo '<td>'.$row_unpaid["payment_status"].'</td>';
+									echo '<td><p style="color:red">UNPAID</p></td>';
 									echo '</tr>';
 									$sl_no=$sl_no+1;
 								}
