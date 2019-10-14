@@ -228,11 +228,13 @@ table.blueTable tfoot .links a{
 								$query_unpaid = "SELECT * FROM khata WHERE payment_status=0";
 								$res_unpaid = mysqli_query($link, $query_unpaid);
 								while($row_unpaid=mysqli_fetch_assoc($res_unpaid)){
+									echo '<tr>';
 									echo '<td>'.$row_unpaid["kritarth_id"].'</td>';
 									echo '<td>'.$row_unpaid["kiit_roll"].'</td>';
 									echo '<td>'.$row_unpaid["name"].'</td>';
 									echo '<td>'.$row_unpaid["email"].'</td>';
 									echo '<td>'.$row_unpaid["phone"].'</td>';
+									echo '</tr>'
 								}
 							?>
 							</table>
