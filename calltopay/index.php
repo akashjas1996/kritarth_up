@@ -225,7 +225,7 @@ table.blueTable tfoot .links a{
 							</thead>
 
 							<?php
-								$query_unpaid = "SELECT * FROM khata WHERE payment_status=0";
+								$query_unpaid = "SELECT * FROM khata WHERE payment_status=0 and contact!=0";
 								$res_unpaid = mysqli_query($link, $query_unpaid);
 								while($row_unpaid=mysqli_fetch_assoc($res_unpaid)){
 									echo '<tr>';
