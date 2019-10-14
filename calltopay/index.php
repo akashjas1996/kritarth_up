@@ -196,7 +196,7 @@ table.blueTable tfoot .links a{
 	<body>
 		
 		<div id="site-content">
-			<?php include '../inc/header.php' ?>
+			<?php include '../inc/header.php'; $sl_no=0; ?>
 			
 			<main class="main-content">
 				<div class="fullwidth-block inner-content">
@@ -229,7 +229,7 @@ table.blueTable tfoot .links a{
 								$res_unpaid = mysqli_query($link, $query_unpaid);
 								while($row_unpaid=mysqli_fetch_assoc($res_unpaid)){
 									echo '<tr>';
-									echo '<td></td>';
+									echo '<td>'.$sl_no.'</td>';
 									echo '<td>'.$row_unpaid["kritarth_id"].'</td>';
 									echo '<td>'.$row_unpaid["kiit_roll"].'</td>';
 									echo '<td>'.$row_unpaid["name"].'</td>';
@@ -237,6 +237,7 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_unpaid["contact"].'</td>';
 									echo '<td>'.$row_unpaid["payment_status"].'</td>';
 									echo '</tr>';
+									$sl_no=$sl_no+1;
 								}
 							?>
 							</table>
