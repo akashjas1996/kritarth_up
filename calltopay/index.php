@@ -234,7 +234,7 @@ table.blueTable tfoot .links a{
 									echo '<td>'.$row_unpaid["name"].'</td>';
 									echo '<td>'.$row_unpaid["email"].'</td>';
 									echo '<td>'.$row_unpaid["phone"].'</td>';
-									echo '</tr>'
+									echo '</tr>';
 								}
 							?>
 							</table>
