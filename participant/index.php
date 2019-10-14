@@ -518,7 +518,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											<form action="" method="POST">
 												<input type="hidden" name="del_event_id" value = "<?php echo $row3['event_id'] ?>">
 											<div class="row">
-												<button disabled name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%; color: black"> Remove </button>
+												<button name="participation_removal_pressed" type="submit" class="btn_style1" style="width: 93%; color: black"> Remove </button>
 											</div>
 										</form>
 										</div>
@@ -552,8 +552,8 @@ if(isset($_POST['participation_removal_pressed'])){
 											
 											
 
-
-											<h4 align="left"> Time :  <?php echo $row3['shedule'] ?> </h4>
+											<h4 align="left"> Date :  <?php echo $row3['d_date'] ?> </h4>
+											<h4 align="left"> Time :  <?php echo $row3['t_time'] ?> </h4>
 											<div>
 
 											</div>
