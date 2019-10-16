@@ -228,6 +228,27 @@ table.blueTable tfoot .links a{
 							$row_paid = mysqli_num_rows($res_paid);
 							?>
 							</h3><?php echo $row_paid; ?></div>
+
+
+							<br><br>
+
+							<?php 
+
+							$query_mail_progress = "SELECT * FROM khata WHERE mail_1=0";
+							$res_mail_progress = mysqli_query($link, $query_mail_progress);
+							$row_mail_progress = mysqli_fetch_assoc($res_mail_progress);
+
+							$result = mysqli_num_rows($res_mail_progress);
+
+							if($result>0){
+								echo "Mail in Progress.";
+							}
+							else{
+								echo "All mails sent.";
+							}
+
+
+							 ?></div>
 						</div>
 						</center>
 					</div>
