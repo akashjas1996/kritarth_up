@@ -234,7 +234,7 @@ table.blueTable tfoot .links a{
 
 							<?php 
 
-							$query_mail_progress = "SELECT * FROM khata WHERE mail_1=0";
+							$query_mail_progress = "SELECT * FROM khata WHERE mail_1=0 && payment_status=0";
 							$res_mail_progress = mysqli_query($link, $query_mail_progress);
 							$row_mail_progress = mysqli_fetch_assoc($res_mail_progress);
 
