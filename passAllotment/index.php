@@ -226,7 +226,7 @@ table.blueTable tfoot .links a{
 							
 									$query_std_details = "SELECT * FROM khata";
 									$res_std_details = mysqli_query($link, $query_std_details);
-									$row_std_details = mysqli_fetch_assoc($res_std_details);
+									while($row_std_details = mysqli_fetch_assoc($res_std_details)){
 									echo '<tr>';
 									echo '<td data-column="Sl">'.$count.'</td>';
 									$count=$count+1;
@@ -267,7 +267,7 @@ table.blueTable tfoot .links a{
 										<option>ABSENT</option>
 									</select></td>
 									<?php echo '</tr>';
-								
+								}
 								?>
 							</table>
 						</div>
