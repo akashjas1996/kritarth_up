@@ -223,10 +223,7 @@ table.blueTable tfoot .links a{
 
 							<?php
 								
-								$query_get_std = "SELECT * FROM pratispradha_chunao";
-								$res_get_std = mysqli_query($link, $query_get_std);
-								while($row_get_std = mysqli_fetch_assoc($res_get_std)){
-									$current_kid = $row_get_std['kritarth_id'];
+							
 									$query_std_details = "SELECT * FROM khata";
 									$res_std_details = mysqli_query($link, $query_std_details);
 									$row_std_details = mysqli_fetch_assoc($res_std_details);
@@ -270,7 +267,7 @@ table.blueTable tfoot .links a{
 										<option>ABSENT</option>
 									</select></td>
 									<?php echo '</tr>';
-								}
+								
 								?>
 							</table>
 						</div>
