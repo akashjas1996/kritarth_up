@@ -143,6 +143,9 @@ if(isset($_POST['roll_save'])){
 if(isset($_POST['participation_pressed'])){
 	$evnt =  $_POST['req_event'];
 	$kid =  $_POST['k_id'];
+	if($kid==$_SESSION['k_id']){
+		redirect('https://kritarth.org/error.php');
+	}
 	$event_query = "SELECT * FROM pratispradha_chunao WHERE event_id='$evnt' AND kritarth_id = '$kid'";
 	$res_event = mysqli_query($link, $event_query);
 	if(mysqli_num_rows($res_event)>0){
