@@ -48,6 +48,9 @@ if(isset($_POST['login'])){
 				if($_GET['url']=='calltopay'){
 					redirect('../calltopay');
 				}
+				if($_GET['url']=='passAllotment'){
+					redirect('../passAllotment');
+				}
 
 			}
 			else{
