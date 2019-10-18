@@ -230,6 +230,15 @@ table.blueTable tfoot .links a{
 							</h3><?php echo $row_paid; ?></div>
 
 
+							<h1>Pass Alloted till now</h1>
+							<?php
+							$count_pass = "SELECT * FROM khata WHERE pass=1;";
+							$res_pass = mysqli_query($link, $count_pass);
+							$row_pass = mysqli_num_rows($res_pass);
+							?>
+							</h3><?php echo $row_pass; ?></div>
+
+
 							<br><br>
 
 							<?php 
