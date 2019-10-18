@@ -123,7 +123,7 @@ echo mysqli_error($link);
 							<div class="col-md-3"></div>
 							<div class="col-md-6">
 								<form action="" class="contact-form" method="POST">
-									<input name="email" type="text" placeholder="Email Address.."
+									<input name="email" type="email" placeholder="Email Address.."
 									value="<?php 
 									if(isset($_GET['reg_mail'])){
 										echo $_GET['reg_mail'];
