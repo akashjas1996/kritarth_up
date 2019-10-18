@@ -320,7 +320,7 @@ table.blueTable tfoot .links a{
                 console.log(kid);
                 console.log(ob.value);
                 $.ajax({
-                    url: "passAllotment/fetch_pass.php",
+                    url: "fetch_pass.php",
                     method: "POST",
                     data: {
                         kid: kid,
