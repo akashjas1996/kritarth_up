@@ -22,7 +22,7 @@ $curl = curl_init();
 echo $kid;
 echo $mbl;
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?template=hello&otp=".$kid."&otp_length=4&otp_expiry=10&sender=KRTRTH&message=".$kid." is the mobile Verification code for KRITARTH 5.0.&mobile=".$mbl."&authkey=296366AFcEP9oki5d8fad56",
+  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?template=hello&otp=".$kid."&otp_length=4&otp_expiry=10&sender=KRTRTH&message=".$kid." is your KID, please collect your Kritarth ID Card Today(18/10/2019) before 7 PM.&mobile=".$mbl."&authkey=296366AFcEP9oki5d8fad56",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
