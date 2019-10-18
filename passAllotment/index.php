@@ -28,6 +28,21 @@ function redirect($url)
 
  ?>
 
+<?php $kid =  $_SESSION['k_id'];
+							 $query_get_verify = "SELECT * FROM khata WHERE kritarth_id = '$kid'";
+							 $res_get_verify = mysqli_query($link, $query_get_verify);
+							 $row_get_verify = mysqli_fetch_assoc($res_get_verify);
+							 $role = $row_get_verify['role'];
+							 // echo $role;
+							 if($role!=3){
+							 	redirect('../login/index.php?url=passAllotment');
+							 }
+							// echo $row_get_email['name']." !";
+						  ?>
+
+
+
+
 
 <html lang="en">
 	<head>
