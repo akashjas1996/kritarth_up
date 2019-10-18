@@ -217,7 +217,7 @@ table.blueTable tfoot .links a{
 								<th>Email</th>
 								<th>Phone</th>
 								<th>Payment Status</th>
-								<th>Attendance</th>
+								<th>Pass Status</th>
 								</tr>
 							</thead>
 
@@ -252,20 +252,31 @@ table.blueTable tfoot .links a{
 										$pay = "NOT PAID";
 									}
 									echo '<td data-column="Payment">'.$pay.'</td>'; ?>
-									<td data-column="Attendance" > <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
+									<td data-column="Attendance" > <select onchange="mark_attendance(<?php echo $row_std_details['kritarth_id'] ?>, this)">
 									<option disabled selected="selected" >
 										<?php
 										$kid = $row_std_details['kritarth_id'];
-										$eid = $_POST['eid'];
-											$query_check_att = "SELECT * FROM pratispradha_chunao WHERE kritarth_id='$kid' AND event_id='$eid'";
+											$query_check_att = "SELECT * FROM khata WHERE kritarth_id='$kid' ";
 											$res_check_att = mysqli_query($link, $query_check_att);
 											$row_check_att = mysqli_fetch_assoc($res_check_att);
-											echo $row_check_att['status'];
+											if($row_check_att['payment_status']==0){
+												echo "NOT PAID";
+											}
+											else if($row_check_att['pass']==0){
+												echo "WAITING";
+												echo '
+												</option>
+										<option>ALLOTED</option>
+										<option>WAITING</option>
+									</select>
+									';
+											}
+											else{
+												echo "ALLOTED";
+											}
+											
 										?>
-									</option>
-										<option>PRESENT</option>
-										<option>ABSENT</option>
-									</select></td>
+									</td>
 									<?php echo '</tr>';
 								}
 								?>
@@ -303,18 +314,16 @@ table.blueTable tfoot .links a{
 			// 	console.log(b);
 			// }
 
-			function mark_attendance(kid,eventid,ob) {
+			function mark_attendance(kid,ob) {
                // alert(status);
                 //alert(empid)
                 console.log(kid);
-                console.log(eventid);
                 console.log(ob.value);
                 $.ajax({
-                    url: "fetch_att.php",
+                    url: "passAllotment/fetch_pass.php",
                     method: "POST",
                     data: {
                         kid: kid,
-                        eventid: eventid,
                         status:ob.value,
                     },
                     success: function(data) {
