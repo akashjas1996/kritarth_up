@@ -41,9 +41,9 @@ $name = $row_getInfo['name'];
 $email = $row_getInfo['email'];
 $phone = $row_getInfo['contact'];
 $amt = $row_getInfo['amt'];
-if($amt!=200 || $amt!=250){
-    redirect("https://kritarth.org/payment/payment_problem.php");
-}
+// if($amt!=200 || $amt!=250){
+//     redirect("https://kritarth.org/payment/payment_problem.php");
+// }
 $payload = Array(
     'purpose' => 'Kritarth19-'.$kid,
     'amount' => $amt,
