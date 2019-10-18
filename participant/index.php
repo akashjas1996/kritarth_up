@@ -120,6 +120,9 @@ if(isset($_POST['phone_save'])){
 	$kid = $_POST['kid'];
 	$phone_no = $_POST['cont_no'];
 
+	echo $kid;
+	echo $phone_no;
+
 	$stmt_update_phone = $link->prepare("UPDATE khata SET contact=? WHERE kritarth_id=?");
 	$stmt_update_phone->bind_param("si",$phone_no,$kid);
 	$stmt_update_phone->execute();
