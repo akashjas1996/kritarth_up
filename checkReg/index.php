@@ -291,9 +291,9 @@ table.blueTable tfoot .links a{
 											echo $row_check_att['jeet_haar'];
 										?>
 									</option>
-										<option>First</option>
-										<option>Second</option>
-										<option>Third</option>
+										<option>FIRST</option>
+										<option>SECOND</option>
+										<option>THIRD</option>
 									</select></td>
 									<?php echo '</tr>';
 								}

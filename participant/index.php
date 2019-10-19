@@ -512,8 +512,47 @@ if(isset($_POST['participation_removal_pressed'])){
 											$res3 = mysqli_query($link, $q3);
 											$row3 = mysqli_fetch_assoc($res3);
 										 ?>
-										 <div class="row">
+										 <br><br>
+										 <div style="background-color: #E5E5E5" class="row">
+										 	<div class="row">
+										 		<?php 
+
+										 		$status_query = "SELECT * FROM pratispradha_chunao WHERE event_id='$current_event_id' AND kritarth_id='$k_id'";
+										 		$res_status = mysqli_query($link, $status_query);
+										 		$row_status = mysqli_fetch_assoc($res_status);
+
+										 		if($row_status['status']=="SELECT"){
+										 			echo "NOT ATTENDED YET";
+										 		}
+										 		else if($row_status['status']=="ABSENT"){
+										 			echo '<img style="width: 15%" src="images/missed_badge.png">';
+										 		}
+										 		else if($row_status['jeet_haar']=="FIRST"){
+										 			echo '<img style="width: 15%" src="images/first_badge.png">';
+										 		}
+										 		else if($row_status['jeet_haar']=="SECOND"){
+
+										 			echo '<img style="width: 10%" src="images/second_badge.png">';
+
+										 		}
+
+										 		else if($row_status['jeet_haar']=="THIRD"){
+
+										 			echo '<img style="width: 15%" src="images/third_badge.png">';
+
+										 		}
+
+										 		else{
+
+										 			echo '<img style="width: 15%" src="images/participation_badge.png">';
+
+										 		}
+
+										 		?>
+										 		
+										 	</div>
 										<div class="col-lg-4">
+											
 											<div class="event_img_card" style='background-image: url("../images/<?php echo $row3['event_image'] ?>")'>
 												<div class="row">
 														<h2> <?php echo $row3['event_name'] ?> </h2>
