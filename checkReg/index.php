@@ -289,10 +289,10 @@ table.blueTable tfoot .links a{
 											$query_check_att = "SELECT * FROM pratispradha_chunao WHERE kritarth_id='$kid' AND event_id='$eid'";
 											$res_check_att = mysqli_query($link, $query_check_att);
 											$row_check_att = mysqli_fetch_assoc($res_check_att);
-											echo $row_check_att['jeet_haar'];
+											
 										?>
 									</option>
-										<option> SELECT </option>
+										<option> <?php echo $row_check_att['jeet_haar']; ?> </option>
 										<option>FIRST</option>
 										<option>SECOND</option>
 										<option>THIRD</option>
