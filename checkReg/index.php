@@ -227,6 +227,7 @@ table.blueTable tfoot .links a{
 								<th>Phone</th>
 								<th>Payment Status</th>
 								<th>Attendance</th>
+								<th>Result</th>
 								</tr>
 							</thead>
 
@@ -277,6 +278,22 @@ table.blueTable tfoot .links a{
 									</option>
 										<option>PRESENT</option>
 										<option>ABSENT</option>
+									</select></td>
+
+									<td data-column="Result" > <select onchange="mark_result(<?php echo $row_std_details['kritarth_id'] ?>,<?php echo $_POST['eid'] ?>, this)">
+									<option disabled selected="selected" >
+										<?php
+										$kid = $row_std_details['kritarth_id'];
+										$eid = $_POST['eid'];
+											$query_check_att = "SELECT * FROM pratispradha_chunao WHERE kritarth_id='$kid' AND event_id='$eid'";
+											$res_check_att = mysqli_query($link, $query_check_att);
+											$row_check_att = mysqli_fetch_assoc($res_check_att);
+											echo $row_check_att['jeet_haar'];
+										?>
+									</option>
+										<option>First</option>
+										<option>Second</option>
+										<option>Third</option>
 									</select></td>
 									<?php echo '</tr>';
 								}
@@ -337,5 +354,36 @@ table.blueTable tfoot .links a{
 
 
 		</script>
+
+		<script type="text/javascript">
+			// function mark_attendance(a,b){
+			// 	console.log(a);
+			// 	console.log(b);
+			// }
+
+			function mark_result(kid,eventid,ob) {
+               // alert(status);
+                //alert(empid)
+                console.log(kid);
+                console.log(eventid);
+                console.log(ob.value);
+                $.ajax({
+                    url: "fetch_result.php",
+                    method: "POST",
+                    data: {
+                        kid: kid,
+                        eventid: eventid,
+                        result:ob.value,
+                    },
+                    success: function(data) {
+                      //  $('#result').html(data);
+                    }
+                });
+            }
+
+
+		</script>
+
+
 	</body>
 </html>
