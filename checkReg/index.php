@@ -276,6 +276,7 @@ table.blueTable tfoot .links a{
 											echo $row_check_att['status'];
 										?>
 									</option>
+										<!-- <option> SELECT </option> -->
 										<option>PRESENT</option>
 										<option>ABSENT</option>
 									</select></td>
@@ -291,6 +292,7 @@ table.blueTable tfoot .links a{
 											echo $row_check_att['jeet_haar'];
 										?>
 									</option>
+										<option> SELECT </option>
 										<option>FIRST</option>
 										<option>SECOND</option>
 										<option>THIRD</option>
