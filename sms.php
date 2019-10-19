@@ -1,7 +1,7 @@
 <?php
 
 include 'inc/dbconnection.php';
-$query = "SELECT * FROM khata WHERE contact>0 and pass=1 limit 2";
+$query = "SELECT * FROM khata WHERE contact>0 and pass=1";
 $res_query = mysqli_query($link, $query);
 while($row_query = mysqli_fetch_assoc($res_query))
 {
