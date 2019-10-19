@@ -525,26 +525,26 @@ if(isset($_POST['participation_removal_pressed'])){
 										 			echo "NOT ATTENDED YET";
 										 		}
 										 		else if($row_status['status']=="ABSENT"){
-										 			echo '<img style="width: 15%" src="images/missed_badge.png">';
+										 			echo '<img style="width: 15%" src="../images/missed_badge.png">';
 										 		}
 										 		else if($row_status['jeet_haar']=="FIRST"){
-										 			echo '<img style="width: 15%" src="images/first_badge.png">';
+										 			echo '<img style="width: 15%" src="../images/first_badge.png">';
 										 		}
 										 		else if($row_status['jeet_haar']=="SECOND"){
 
-										 			echo '<img style="width: 10%" src="images/second_badge.png">';
+										 			echo '<img style="width: 10%" src="../images/second_badge.png">';
 
 										 		}
 
 										 		else if($row_status['jeet_haar']=="THIRD"){
 
-										 			echo '<img style="width: 15%" src="images/third_badge.png">';
+										 			echo '<img style="width: 15%" src="../images/third_badge.png">';
 
 										 		}
 
 										 		else{
 
-										 			echo '<img style="width: 15%" src="images/participation_badge.png">';
+										 			echo '<img style="width: 15%" src="../images/participation_badge.png">';
 
 										 		}
 
