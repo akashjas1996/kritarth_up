@@ -422,7 +422,7 @@ if(isset($_POST['participation_removal_pressed'])){
 											// </a>
 											// ';
 
-												echo '<img style="width:10%" src="../images/housefull.png">';
+												echo '<img style="width:10%" src="../images/soldout.png">';
 											}
 											
 										}
