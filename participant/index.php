@@ -416,11 +416,13 @@ if(isset($_POST['participation_removal_pressed'])){
 												echo '<img style="width:90px" src="../images/paid.png">';
 											}
 											else{
-												echo '
-											<a href="../payment/request.php">
-											<button class="payment_btn">Pay Now</button>
-											</a>
-											';
+											// 	echo '
+											// <a href="../payment/request.php">
+											// <button class="payment_btn">Pay Now</button>
+											// </a>
+											// ';
+
+												echo '<img style="width:10%" src="../images/housefull.png">';
 											}
 											
 										}
@@ -574,7 +576,7 @@ if(isset($_POST['participation_removal_pressed'])){
 												</div>
 												<div class="col-lg-4">
 													<?php
-													if($row2['status']==1){
+													if($row2['status']=="PRESENT"){
 														echo '<button type="button" class="btn btn-success">Attended</button>';
 													 
 													}
@@ -587,7 +589,13 @@ if(isset($_POST['participation_removal_pressed'])){
 														echo '<button type="button" class="btn btn-waiting">'.$diff_rounded.' Days Left</button>';
 												}
 												?>
-													
+
+
+												<!-- <form action="../Team" METHOD="POST">
+												<input type="hidden" name="kid_team" value="<?php echo $_SESSION['k_id']?>">
+												<input type="hidden" name="eventwa" value="<?php echo $row3['event_id']?>">
+												<button type="submit" class="btn btn-waiting">TEAM MEMBERS</button>
+												</form> -->
 
 
 												</div>
