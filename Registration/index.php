@@ -20,7 +20,7 @@ function redirect($url)
         echo '</noscript>'; exit;
     }
 }
-
+redirect("../soldout");
 if(isset($_POST['register'])){
 	$name = $_POST['name'];
 	$email =  $_POST['email'];
